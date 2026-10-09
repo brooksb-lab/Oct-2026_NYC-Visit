@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Friday, October 9 at 6:03 pm";
+var UPDATED = "Updated Friday, October 9 at 6:07 pm";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -436,7 +436,8 @@ var CHANGES = [
   {at:"2026-10-09T13:27", text:"Lunch ran long, so the afternoon moves about 25 minutes: train at 2:00, cookies at 2:20, the Vessel at 3:10, the High Line at 3:25, the river walk at 4:20. The Oculus is a quick look at 5:05. Office is still 5:30."},
   {at:"2026-10-09T14:40", text:"Change of plans: from the cookie stop we go to Macy's at Herald Square to find Dad a jacket. The Vessel and the High Line are on hold, and we decide when we walk out of Macy's. The river walk is off for today. Office is still 5:30."},
   {at:"2026-10-09T15:48", text:"From Macy's we take the train back down to SoHo and browse shops until 4:45, then the R or W train to the Oculus. The Vessel and the High Line are off for today. Office is still 5:30."},
-  {at:"2026-10-09T18:03", text:"Friday lunch is done: we ate at DeKalb Market Hall. The lunch places we did not use are now under Other ideas at the bottom of the food list."}
+  {at:"2026-10-09T18:03", text:"Friday lunch is done: we ate at DeKalb Market Hall. The lunch places we did not use are now under Other ideas at the bottom of the food list."},
+  {at:"2026-10-09T18:07", text:"Friday dinner: four places on my street are now at the top of the list. Colonia Verde, Evelina, Walter's and Sailor."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -575,7 +576,7 @@ var EVENTS = [
    order = optional list of restaurant names giving that meal its own running order. */
 var MEALS = [
   {key:"fri-lunch",     name:"Friday lunch",       where:"we ate at DeKalb Market Hall", more:"casual sit-down lunch restaurants", inf:"neighborhoods/fort-greene", ico:"🥪", order:["DeKalb Market Hall"]},
-  {key:"fri-dinner",    name:"Friday dinner",      where:"Dad's birthday", more:"casual steak restaurants", inf:"cuisines/steaks", ico:"🎂", order:["The Odeon", "French Louie", "Walter's", "Bubby's", "Fraunces Tavern", "Colonia Verde"]},
+  {key:"fri-dinner",    name:"Friday dinner",      where:"Dad's birthday", more:"casual steak restaurants", inf:"cuisines/steaks", ico:"🎂", order:["Colonia Verde", "Evelina", "Walter's", "Sailor", "The Odeon", "French Louie", "Bubby's", "Fraunces Tavern"]},
   {key:"sat-breakfast", name:"Saturday breakfast", where:"near the hotel", more:"breakfast diner", inf:"perfect-for/breakfast", ico:"🍳"},
   {key:"sat-lunch",     name:"Saturday lunch",     where:"back in Brooklyn after the ferry", more:"casual sit-down lunch restaurants", inf:"perfect-for/lunch", ico:"🥪"},
   {key:"sat-dinner",    name:"Saturday dinner",    where:"Brooklyn", more:"casual steak and American restaurants", inf:"perfect-for/dinner-with-the-parents", ico:"🍽️"},
@@ -604,9 +605,9 @@ var CUISINES = ["Steak", "Italian", "French", "American", "Mediterranean and Per
 var EATS = [
   {n:"DeKalb Market Hall", k:"Food hall, Downtown Brooklyn", area:"Brooklyn", cui:"Food hall", meals:["fri-lunch"], q:"DeKalb Market Hall 445 Albee Square West Brooklyn", w:"http://dekalbmarkethall.com/",
    d:"Where we had Friday's lunch. A big food hall with about 40 counters, so everyone picks their own: sandwiches, pizza, barbecue, noodles, salads. Lots of seats, no waiting for a table."},
-  {n:"Sailor", k:"American bistro, Fort Greene", area:"Brooklyn", cui:"American", meals:[], q:"Sailor 228 DeKalb Ave Brooklyn",
+  {n:"Sailor", k:"American bistro, Fort Greene", area:"Brooklyn", cui:"American", meals:["fri-dinner"], q:"Sailor 228 DeKalb Ave Brooklyn", w:"https://www.sailor.nyc/", r:"https://www.sailor.nyc/reserve/",
    d:"A handsome little bistro half a block from my place, from a well-known chef. A very good burger, salads and simple dishes done well. A lovely room, and a little pricier."},
-  {n:"Evelina", k:"Italian, Fort Greene", area:"Brooklyn", cui:"Italian", meals:[], q:"Evelina 211 DeKalb Ave Brooklyn", w:"http://www.evelinabk.com/",
+  {n:"Evelina", k:"Italian, Fort Greene", area:"Brooklyn", cui:"Italian", meals:["fri-dinner"], q:"Evelina 211 DeKalb Ave Brooklyn", w:"http://www.evelinabk.com/", r:"https://resy.com/cities/ny/evelina",
    d:"A pretty Italian spot a block from my place. Fresh pasta and salads, eggs at lunch, and a strip steak at dinner. Lunch runs until 3:30 and dinner starts at 5."},
   {n:"Walter's", k:"American, Fort Greene", area:"Brooklyn", cui:"American", meals:["fri-dinner"], q:"Walter's 166 DeKalb Ave Brooklyn", w:"http://waltersbrooklyn.com/", r:"https://waltersbrooklyn.com/",
    d:"A neighborhood favorite across from Fort Greene Park, a five minute walk from my place. Steak and fries, a good burger, salads. Easy and comfortable."},
@@ -635,7 +636,7 @@ var EATS = [
   {n:"Gage & Tollner", k:"Steaks and chops, Downtown Brooklyn", area:"Brooklyn", cui:"Steak", meals:["sat-dinner"], q:"Gage & Tollner 372 Fulton St Brooklyn", w:"https://www.gageandtollner.com/", r:"https://www.gageandtollner.com/",
    d:"A Brooklyn steak and chop house from 1879, restored to look the way it did then: mirrors, dark wood, brass lamps. Steaks, chops, fried chicken, oysters. A beautiful room and a very good steak. A short walk from your hotel."},
   {n:"Colonia Verde", k:"Wood-fired Latin American, Fort Greene", area:"Brooklyn", cui:"Latin American", meals:["fri-dinner", "sat-dinner"], q:"Colonia Verde 219 DeKalb Ave Brooklyn", w:"https://www.coloniaverdenyc.com/", r:"https://resy.com/cities/ny/colonia-verde",
-   d:"A cozy neighborhood restaurant on my street. Steak and vegetables cooked over a wood fire, and a garden room in back. Relaxed and good for talking."},
+   d:"A cozy neighborhood restaurant on my street. Steak and vegetables cooked over a wood fire, including a big ribeye to share, and a garden room in back. Relaxed and good for talking."},
   {n:"Time Out Market", k:"Food hall, DUMBO", area:"Brooklyn", cui:"Food hall", meals:["sat-lunch"], q:"Time Out Market New York 55 Water St Brooklyn", w:"https://www.timeoutmarket.com/newyork/",
    d:"A food hall on the Brooklyn waterfront. Lots of counters, so everyone gets what they want. Take it up to the roof for a view of both bridges."},
   {n:"Eyval", k:"Persian, Bushwick", area:"Brooklyn", cui:"Mediterranean and Persian", meals:["sat-dinner"], w:"http://www.eyvalnyc.com/",
