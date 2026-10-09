@@ -1,17 +1,23 @@
-# Pushes from Claude don't start a GitHub Pages build on their own.
-# This asks Pages to rebuild the site from main after every push.
-name: Rebuild site
+# The site is served from the gh-pages branch, but updates are pushed to main.
+# After every push to main this copies main onto gh-pages and asks Pages to rebuild.
+name: Publish site
 on:
   push:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
   pages: write
 jobs:
-  rebuild:
+  publish:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Copy main onto gh-pages
+        run: git push --force origin HEAD:gh-pages
       - name: Request a Pages build
         run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
         env:
