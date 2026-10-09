@@ -98,6 +98,7 @@ details.go[open] summary{color:var(--ink)}
 details.go summary:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 .links{display:flex;flex-wrap:wrap;gap:0 18px;margin:0 0 2px;padding-left:21px;font-size:15px}
 .links a{padding:6px 0 8px;font-weight:700}
+.links .dl{padding:6px 0 8px;color:var(--muted);margin-right:-6px}
 
 .plain{border-top:4px solid var(--ink);padding-top:14px}
 .plain p{margin:0;color:var(--muted);font-size:16px;max-width:60ch}
@@ -472,6 +473,9 @@ var PLACES = {
    ico: emoji shown before the title. Every event has one; give each new event one too (alt versions can carry their own).
    subs:[{name, addr, lat, lon, note, w}] = places inside a stop. They show when the stop is opened, each with its
    own pin menu (Google Maps, Uber, and Website when w is set). subsLabel = the word for them ("shops").
+   mode:["walk" | "transit" | "car", ...] = a travel leg. Its Google Maps link becomes directions from where you are
+   now to the leg's destination, set to that way of travelling; two modes give two links. dest: key in PLACES for the
+   destination when it is not the leg's own place (a leg pinned at the station it starts from).
    tix: ticket or booking link, shown in the stop's pin menu when it is opened. tixLabel = its text ("Tickets" if omitted).
    links:[[label, url], ...] = more links in the stop's pin menu (an info page, a map).
    path:[keys] = the places the map's route line runs through during this event, in order, when that is more than
@@ -482,48 +486,48 @@ var PLACES = {
 var EVENTS = [
   {d:"2026-10-09", s:"11:33", e:"12:30", t:"Parents land LGA (AA 4777)", ico:"🛬", cal:"between", place:"lga"},
   {d:"2026-10-09", s:"12:30", e:"12:45", t:"Bags at mine", ico:"🧳", cal:"between", place:"home"},
-  {d:"2026-10-09", s:"12:45", e:"13:05", t:"Walk to DeKalb Market Hall", ico:"🚶", cal:"between", to:"dekalbmkt", note:"About 18 minutes on foot."},
+  {d:"2026-10-09", s:"12:45", e:"13:05", t:"Walk to DeKalb Market Hall", ico:"🚶", cal:"between", mode:["walk"], to:"dekalbmkt", note:"About 18 minutes on foot."},
   {d:"2026-10-09", s:"13:05", e:"13:50", t:"Lunch: DeKalb Market Hall", ico:"🥪", cal:"meal", place:"dekalbmkt", opts:"fri-lunch", note:"A food hall. Everyone picks their own counter."},
-  {d:"2026-10-09", s:"13:50", e:"14:10", t:"B train to NoHo: DeKalb Av to Broadway-Lafayette", ico:"🚇", cal:"between", to:"levain", note:"Two stops."},
+  {d:"2026-10-09", s:"13:50", e:"14:10", t:"B train to NoHo: DeKalb Av to Broadway-Lafayette", ico:"🚇", cal:"between", mode:["transit"], to:"levain", note:"Two stops."},
   {d:"2026-10-09", s:"14:10", e:"14:25", t:"Levain NoHo", ico:"🍪", cal:"meal", place:"levain"},
-  {d:"2026-10-09", s:"14:25", e:"15:00", t:"Train or car to Hudson Yards", ico:"🚇", cal:"between", to:"vessel",
+  {d:"2026-10-09", s:"14:25", e:"15:00", t:"Train or car to Hudson Yards", ico:"🚇", cal:"between", mode:["transit","car"], to:"vessel",
    note:"Train: B, D, F or M uptown from Broadway-Lafayette to 42 St-Bryant Park, then the 7 two stops to Hudson Yards. About 30 minutes. A car takes about as long in Friday traffic."},
   {d:"2026-10-09", s:"15:00", e:"15:15", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
    note:"Free to see from the plaza. Climbing takes a ticket, and the elevator is out, so it is stairs only."},
   {d:"2026-10-09", s:"15:15", e:"16:10", t:"High Line, Hudson Yards south to Gansevoort St", ico:"🌿", cal:"fun", place:"highline", path:["highline","gansevoort"], note:"About 1.5 miles. Free, no tickets."},
-  {d:"2026-10-09", s:"16:10", e:"16:55", t:"Walk Hudson River Park to WTC", ico:"🚶", cal:"between", to:"oculus", path:["hrp"], note:"About 1.9 miles along the river."},
+  {d:"2026-10-09", s:"16:10", e:"16:55", t:"Walk Hudson River Park to WTC", ico:"🚶", cal:"between", mode:["walk"], to:"oculus", path:["hrp"], note:"About 1.9 miles along the river."},
   {d:"2026-10-09", s:"16:55", e:"17:15", t:"Oculus", ico:"🕊️", cal:"fun", place:"oculus"},
   {d:"2026-10-09", s:"17:15", e:"17:30", t:"1WTC lobby security, IDs out", ico:"🪪", cal:"between", place:"wtc"},
   {d:"2026-10-09", s:"17:30", e:"18:40", t:"Office, 58th floor (sunset view, observatory optional)", ico:"🌇", cal:"fun", place:"wtc", sun:true, tix:"https://www.oneworldobservatory.com/", tixLabel:"Observatory tickets"},
   {d:"2026-10-09", s:"18:40", e:"19:15", t:"Travel to dinner", ico:"🚕", cal:"between"},
   {d:"2026-10-09", s:"19:15", e:"20:45", t:"Dinner (TBD)", ico:"🎂", cal:"meal", tbd:"fri-dinner"},
-  {d:"2026-10-09", s:"20:45", e:"21:45", t:"Car with bags from mine to the Ace, check-in", ico:"🛎️", cal:"between", place:"ace", path:["home","ace"]},
+  {d:"2026-10-09", s:"20:45", e:"21:45", t:"Car with bags from mine to the Ace, check-in", ico:"🛎️", cal:"between", mode:["car"], place:"ace", path:["home","ace"]},
 
   {d:"2026-10-10", s:"08:30", e:"09:30", t:"Breakfast (TBD)", ico:"🍳", cal:"meal", tbd:"sat-breakfast"},
-  {d:"2026-10-10", s:"09:35", e:"10:00", t:"Walk to Pier 6", ico:"🚶", cal:"between", to:"pier6", path:["ace","pier6"]},
+  {d:"2026-10-10", s:"09:35", e:"10:00", t:"Walk to Pier 6", ico:"🚶", cal:"between", mode:["walk"], to:"pier6", path:["ace","pier6"]},
   {d:"2026-10-10", s:"10:15", e:"10:30", t:"Ferry to Governors Island (free)", ico:"⛴️", cal:"between", place:"pier6", tix:"https://www.govisland.com/plan-your-visit/ferry", tixLabel:"Ferry tickets", note:"Free before 11 am. Booking ahead is still recommended. Tickets are round trip.",
    info:["Pier 6 to the island: 10:15 (free), 11:15, 12:15, 1:15, 2:15, 3:15, 4:15.", "Island back to Pier 6: 11:00, 12:00, 1:00, 2:00, 3:00, 4:00, 5:00, 6:00.", "Saturdays, Sundays and holidays through November 1."]},
   {d:"2026-10-10", s:"10:30", e:"11:15", t:"Nolan Park and Fort Jay", ico:"🌳", cal:"fun", place:"fortjay", links:[["About Fort Jay", "https://www.nps.gov/gois/learn/historyculture/fortjay.htm"], ["Island map", "https://www.govisland.com/map"]]},
   {d:"2026-10-10", s:"11:15", e:"11:45", t:"Castle Williams", ico:"🏰", cal:"fun", place:"castle", links:[["About Castle Williams", "https://www.nps.gov/gois/learn/historyculture/castle-williams.htm"], ["Island map", "https://www.govisland.com/map"]]},
-  {d:"2026-10-10", s:"11:45", e:"12:10", t:"Walk south to the Hills", ico:"🚶", cal:"between", to:"outlook"},
+  {d:"2026-10-10", s:"11:45", e:"12:10", t:"Walk south to the Hills", ico:"🚶", cal:"between", mode:["walk"], to:"outlook"},
   {d:"2026-10-10", s:"12:10", e:"12:35", t:"Outlook Hill", ico:"🗽", cal:"fun", place:"outlook", links:[["About the Hills", "https://www.govisland.com/the-park#theHills"], ["Island map", "https://www.govisland.com/map"]]},
-  {d:"2026-10-10", s:"12:35", e:"13:00", t:"Back to the pier", ico:"🚶", cal:"between", to:"yankee"},
+  {d:"2026-10-10", s:"12:35", e:"13:00", t:"Back to the pier", ico:"🚶", cal:"between", mode:["walk"], to:"yankee"},
   {d:"2026-10-10", s:"13:00", e:"13:15", t:"Ferry back to Brooklyn", ico:"⛴️", cal:"between", place:"yankee", path:["yankee","pier6"], tix:"https://www.govisland.com/plan-your-visit/ferry", tixLabel:"Ferry tickets", note:"Same ticket as the morning ferry. We take the 1:00. The next one is 2:00.",
    info:["Island back to Pier 6: 11:00, 12:00, 1:00, 2:00, 3:00, 4:00, 5:00, 6:00.", "Pier 6 to the island: 10:15 (free), 11:15, 12:15, 1:15, 2:15, 3:15, 4:15.", "Saturdays, Sundays and holidays through November 1."]},
   {d:"2026-10-10", s:"13:30", e:"14:45", t:"Lunch (TBD)", ico:"🥪", cal:"meal", tbd:"sat-lunch"},
-  {d:"2026-10-10", s:"14:45", e:"15:15", t:"Subway or car to the Botanic Garden", ico:"🚇", cal:"between", to:"bbg"},
+  {d:"2026-10-10", s:"14:45", e:"15:15", t:"Subway or car to the Botanic Garden", ico:"🚇", cal:"between", mode:["transit","car"], to:"bbg"},
   {d:"2026-10-10", s:"15:15", e:"17:15", t:"Brooklyn Botanic Garden (Japanese Hill-and-Pond Garden first)", ico:"🌿", cal:"fun", place:"bbg", tix:"https://www.bbg.org/tickets", note:"Streets near the garden are closed for a parade, so we take the subway."},
-  {d:"2026-10-10", s:"17:15", e:"19:00", t:"Back to the Ace, rest", ico:"🛋️", cal:"fun", place:"ace"},
+  {d:"2026-10-10", s:"17:15", e:"19:00", t:"Back to the Ace, rest", ico:"🛋️", cal:"fun", mode:["transit","car"], place:"ace"},
   {d:"2026-10-10", s:"19:00", e:"20:30", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sat-dinner"},
 
-  {d:"2026-10-11", s:"08:00", e:"08:30", t:"A/C from Hoyt-Schermerhorn to Meatpacking", ico:"🚇", cal:"between", place:"hoyt"},
+  {d:"2026-10-11", s:"08:00", e:"08:30", t:"A/C from Hoyt-Schermerhorn to Meatpacking", ico:"🚇", cal:"between", mode:["transit"], dest:"roast", place:"hoyt"},
   {d:"2026-10-11", s:"08:30", e:"09:15", t:"Starbucks Reserve Roastery", ico:"☕", cal:"meal", place:"roast", tix:"https://www.opentable.com/restaurant/profile/1346173", tixLabel:"Reserve a table"},
   {d:"2026-10-11", s:"09:15", e:"10:25", t:"Little Island if dry, Chelsea Market if wet", ico:"🌳", cal:"fun", place:"little",
    alt:{dry:{t:"Little Island", ico:"🌳", place:"little"}, wet:{t:"Chelsea Market", ico:"🏬", place:"chelsea"}}},
-  {d:"2026-10-11", s:"10:25", e:"11:00", t:"Car to the Frick", ico:"🚕", cal:"between", to:"frick"},
+  {d:"2026-10-11", s:"10:25", e:"11:00", t:"Car to the Frick", ico:"🚕", cal:"between", mode:["car"], to:"frick"},
   {d:"2026-10-11", s:"11:00", e:"13:00", t:"Frick Collection", ico:"🖼️", cal:"fun", place:"frick", tix:"https://www.frick.org/tickets", tixLabel:"Timed tickets", note:"Tickets have to be bought ahead for a set time."},
   {d:"2026-10-11", s:"13:00", e:"14:15", t:"Lunch (TBD)", ico:"🥪", cal:"meal", tbd:"sun-lunch"},
-  {d:"2026-10-11", s:"14:15", e:"14:45", t:"6 train downtown to Spring St", ico:"🚇", cal:"between", place:"hunter"},
+  {d:"2026-10-11", s:"14:15", e:"14:45", t:"6 train downtown to Spring St", ico:"🚇", cal:"between", mode:["transit"], dest:"soho", place:"hunter"},
   {d:"2026-10-11", s:"14:45", e:"17:00", t:"SoHo", ico:"🛍️", cal:"fun", place:"soho", subsLabel:"shops",
    subs:[
     {name:"Polo Ralph Lauren", addr:"109 Prince St, New York, NY 10012", lat:40.7252, lon:-73.9994, note:"Bayport poplin jacket, about $198.", w:"https://www.ralphlauren.com/men-clothing-jackets-coats-vests/the-bayport-poplin-jacket/0080540214.html"},
@@ -531,12 +535,12 @@ var EVENTS = [
     {name:"Bloomingdale's", addr:"504 Broadway, New York, NY 10012", lat:40.7222, lon:-73.9992, note:"Department store. Worth a look for London Fog.", w:"https://www.bloomingdales.com/shop/search?keyword=london%20fog"},
     {name:"J.Crew", addr:"484 Broadway, New York, NY 10013", lat:40.7215, lon:-73.9998, note:"Cotton twill Harrington jacket, $178.", w:"https://www.jcrew.com/plp/mens/categories/clothing/coats-and-jackets/harrington-and-utility-jacket"}
    ]},
-  {d:"2026-10-11", s:"17:00", e:"17:30", t:"Back to the Ace or straight on", ico:"🚇", cal:"between", to:"ace", path:["hoyt"]},
+  {d:"2026-10-11", s:"17:00", e:"17:30", t:"Back to the Ace or straight on", ico:"🚇", cal:"between", mode:["transit","car"], to:"ace", path:["hoyt"]},
   {d:"2026-10-11", s:"18:30", e:"20:00", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sun-dinner"},
 
   {d:"2026-10-12", s:"09:00", e:"09:15", t:"Check out, bags at the desk", ico:"🧳", cal:"between", place:"ace"},
   {d:"2026-10-12", s:"09:15", e:"10:00", t:"Breakfast (TBD)", ico:"🍳", cal:"meal", tbd:"mon-breakfast"},
-  {d:"2026-10-12", s:"10:00", e:"10:45", t:"Car to LGA", ico:"🚕", cal:"between", to:"lga"},
+  {d:"2026-10-12", s:"10:00", e:"10:45", t:"Car to LGA", ico:"🚕", cal:"between", mode:["car"], to:"lga"},
   {d:"2026-10-12", s:"10:45", e:"12:19", t:"LGA, flight AA 1136 home", ico:"🛫", cal:"between", place:"lga", note:"Departs 12:19 pm."}
 ];
 
@@ -650,12 +654,19 @@ function uber(p){
     "&dropoff%5Bformatted_address%5D=" + q(p) +
     "&dropoff%5Blatitude%5D=" + p.lat + "&dropoff%5Blongitude%5D=" + p.lon;
 }
-function linkRow(p, extra){
-  return el("p", {"class":"links"}, [
-    el("a", {href:gmaps(p), target:"_blank", rel:"noopener", text:"Google Maps"}),
-    el("a", {href:uber(p), target:"_blank", rel:"noopener", text:"Uber"}),
-    extra || null
-  ]);
+/* directions in Google Maps from where you are now (no origin given), in one way of travelling */
+var MODES = {walk:["walking", "Walk"], transit:["transit", "Subway"], car:["driving", "Drive"]};
+function dirs(p, mode){ return "https://www.google.com/maps/dir/?api=1&destination=" + q(p) + "&travelmode=" + MODES[mode][0]; }
+/* modes = the leg's ways of travelling: the Google Maps link is then directions, one link per mode */
+function linkRow(p, extra, modes){
+  var kids = [];
+  if (modes && modes.length){
+    kids.push(el("span", {"class":"dl", text:"Directions"}));
+    modes.forEach(function(m){ kids.push(el("a", {href:dirs(p, m), target:"_blank", rel:"noopener", "aria-label":MODES[m][1] + " directions in Google Maps", text:MODES[m][1]})); });
+  } else kids.push(el("a", {href:gmaps(p), target:"_blank", rel:"noopener", text:"Google Maps"}));
+  kids.push(el("a", {href:uber(p), target:"_blank", rel:"noopener", text:"Uber"}));
+  kids.push(extra || null);
+  return el("p", {"class":"links"}, kids);
 }
 function pinIcon(){
   var s = sv("svg", {viewBox:"0 0 24 24", "aria-hidden":"true"});
@@ -663,8 +674,8 @@ function pinIcon(){
   return s;
 }
 /* pin + place line; tap to show Google Maps and Uber, tap again to hide them */
-function goMenu(p, label, extra){
-  return el("details", {"class":"go"}, [el("summary", null, [pinIcon(), el("span", {text:label})]), linkRow(p, extra)]);
+function goMenu(p, label, extra, modes, target){
+  return el("details", {"class":"go"}, [el("summary", null, [pinIcon(), el("span", {text:label})]), linkRow(target || p, extra, modes)]);
 }
 /* day bullets, in order: 1/2/3 red, 4/5/6 green, 7 purple, N/Q/R/W yellow (black numeral) */
 var LINES = [["#ee352e","#fff"],["#00933c","#fff"],["#b933ad","#fff"],["#fccc0a","#000"]];
@@ -833,8 +844,9 @@ function stopLi(e){
   var f = fmt(e.s), pk = evPlace(e), p = pk ? PLACES[pk] : null, dest = !p && e.to ? PLACES[e.to] : null;
   var time = el("div", {"class":"time"}, [el("span", {"class":"tt", text:f.t}), el("small", {text:f.ap})]);
   var what = el("div", {"class":"what"}, [el("p", {"class":"t"}, [evIco(e) ? el("span", {"class":"ti", "aria-hidden":"true", text:evIco(e)}) : null, document.createTextNode(evTitle(e))])]);
-  if (p) what.appendChild(goMenu(p, p.name + ", " + p.addr, p.off ? null : mapLink(e.d, pk)));
-  if (dest) what.appendChild(goMenu(dest, "To " + dest.name));
+  var modes = e.mode ? [].concat(e.mode) : null, target = e.dest ? PLACES[e.dest] : null;
+  if (p) what.appendChild(goMenu(p, p.name + ", " + p.addr, p.off ? null : mapLink(e.d, pk), modes, target));
+  if (dest) what.appendChild(goMenu(dest, "To " + dest.name, null, modes, target));
   if (e.tix){
     var tl = el("a", {href:e.tix, target:"_blank", rel:"noopener", text:e.tixLabel || "Tickets"}), lk = what.querySelector("details.go .links");
     if (lk) lk.appendChild(tl); else what.appendChild(el("p", {"class":"links"}, [tl]));
