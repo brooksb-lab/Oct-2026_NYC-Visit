@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Friday, October 9 at 11:10 am";
+var UPDATED = "Updated Friday, October 9 at 11:45 am";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -431,7 +431,8 @@ var CHANGES = [
   {at:"2026-10-09T10:00", text:"Friday is rearranged. Lunch at DeKalb Market Hall, cookies at Levain, then the Vessel, the High Line and a walk down the Hudson to the Oculus. Office at 5:30, dinner at 7:15. SoHo and the jacket shops move to Sunday."},
   {at:"2026-10-09T10:41", text:"Friday lunch: DeKalb Market Hall is the plan, and the other lunch options are back on the list if one sounds better."},
   {at:"2026-10-09T10:45", text:"Friday: we may take the train from the cookie stop to Hudson Yards, so that leg is longer. The Vessel is now at 3:00, the High Line at 3:15 and the Oculus at 4:55. Office is still 5:30."},
-  {at:"2026-10-09T11:10", text:"You landed early, so Friday starts sooner: lunch at 12:40, cookies at 1:50, the Vessel at 2:40, the High Line at 3:00 and the Oculus at 4:45. Office is still 5:30."}
+  {at:"2026-10-09T11:10", text:"You landed early, so Friday starts sooner: lunch at 12:40, cookies at 1:50, the Vessel at 2:40, the High Line at 3:00 and the Oculus at 4:45. Office is still 5:30."},
+  {at:"2026-10-09T11:45", text:"Your car gets to Brooks at 12:14, so the early afternoon slides about ten minutes: lunch at 12:50, cookies at 1:55, the Vessel at 2:45. The High Line at 3:00 and everything after stay put."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -498,15 +499,15 @@ var PLACES = {
    sun:true adds a live sunset line. alt:{dry:{t,place}, wet:{t,place}} gives a stop two versions; the
    "Plan for Dry / Rain" switch on that day picks one (it starts on Rain when that day's pop is 50 or more). */
 var EVENTS = [
-  {d:"2026-10-09", s:"11:06", e:"12:05", t:"Parents land LGA (AA 4777)", ico:"🛬", cal:"between", place:"lga"},
-  {d:"2026-10-09", s:"12:05", e:"12:20", t:"Bags at mine", ico:"🧳", cal:"between", place:"home"},
-  {d:"2026-10-09", s:"12:20", e:"12:40", t:"Walk to DeKalb Market Hall", ico:"🚶", cal:"between", mode:["walk"], to:"dekalbmkt", note:"About 18 minutes on foot."},
-  {d:"2026-10-09", s:"12:40", e:"13:30", t:"Lunch: DeKalb Market Hall", ico:"🥪", cal:"meal", place:"dekalbmkt", opts:"fri-lunch", note:"A food hall. Everyone picks their own counter."},
-  {d:"2026-10-09", s:"13:30", e:"13:50", t:"B train to NoHo: DeKalb Av to Broadway-Lafayette", ico:"🚇", cal:"between", mode:["transit"], to:"levain", note:"Two stops."},
-  {d:"2026-10-09", s:"13:50", e:"14:05", t:"Levain NoHo", ico:"🍪", cal:"meal", place:"levain"},
-  {d:"2026-10-09", s:"14:05", e:"14:40", t:"Train or car to Hudson Yards", ico:"🚇", cal:"between", mode:["transit","car"], to:"vessel",
+  {d:"2026-10-09", s:"11:06", e:"12:14", t:"Parents land LGA (AA 4777)", ico:"🛬", cal:"between", place:"lga"},
+  {d:"2026-10-09", s:"12:14", e:"12:30", t:"Bags at mine", ico:"🧳", cal:"between", place:"home"},
+  {d:"2026-10-09", s:"12:30", e:"12:50", t:"Walk to DeKalb Market Hall", ico:"🚶", cal:"between", mode:["walk"], to:"dekalbmkt", note:"About 18 minutes on foot."},
+  {d:"2026-10-09", s:"12:50", e:"13:35", t:"Lunch: DeKalb Market Hall", ico:"🥪", cal:"meal", place:"dekalbmkt", opts:"fri-lunch", note:"A food hall. Everyone picks their own counter."},
+  {d:"2026-10-09", s:"13:35", e:"13:55", t:"B train to NoHo: DeKalb Av to Broadway-Lafayette", ico:"🚇", cal:"between", mode:["transit"], to:"levain", note:"Two stops."},
+  {d:"2026-10-09", s:"13:55", e:"14:10", t:"Levain NoHo", ico:"🍪", cal:"meal", place:"levain"},
+  {d:"2026-10-09", s:"14:10", e:"14:45", t:"Train or car to Hudson Yards", ico:"🚇", cal:"between", mode:["transit","car"], to:"vessel",
    note:"Train: B, D, F or M uptown from Broadway-Lafayette to 42 St-Bryant Park, then the 7 two stops to Hudson Yards. About 30 minutes. A car takes about as long in Friday traffic."},
-  {d:"2026-10-09", s:"14:40", e:"15:00", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
+  {d:"2026-10-09", s:"14:45", e:"15:00", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
    note:"Free to see from the plaza. Climbing takes a ticket, and the elevator is out, so it is stairs only."},
   {d:"2026-10-09", s:"15:00", e:"16:00", t:"High Line, Hudson Yards south to Gansevoort St", ico:"🌿", cal:"fun", place:"highline", path:["highline","gansevoort"], note:"About 1.5 miles. Free, no tickets."},
   {d:"2026-10-09", s:"16:00", e:"16:45", t:"Walk Hudson River Park to WTC", ico:"🚶", cal:"between", mode:["walk"], to:"oculus", path:["hrp"], note:"About 1.9 miles along the river."},
