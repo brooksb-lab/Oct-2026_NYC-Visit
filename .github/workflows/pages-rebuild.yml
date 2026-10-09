@@ -1,0 +1,18 @@
+# Pushes from Claude don't start a GitHub Pages build on their own.
+# This asks Pages to rebuild the site from main after every push.
+name: Rebuild site
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request a Pages build
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
+        env:
+          GH_TOKEN: ${{ github.token }}
