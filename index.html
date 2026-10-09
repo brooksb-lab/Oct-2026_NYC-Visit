@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Friday, October 9 at 11:45 am";
+var UPDATED = "Updated Friday, October 9 at 1:27 pm";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -432,7 +432,8 @@ var CHANGES = [
   {at:"2026-10-09T10:41", text:"Friday lunch: DeKalb Market Hall is the plan, and the other lunch options are back on the list if one sounds better."},
   {at:"2026-10-09T10:45", text:"Friday: we may take the train from the cookie stop to Hudson Yards, so that leg is longer. The Vessel is now at 3:00, the High Line at 3:15 and the Oculus at 4:55. Office is still 5:30."},
   {at:"2026-10-09T11:10", text:"You landed early, so Friday starts sooner: lunch at 12:40, cookies at 1:50, the Vessel at 2:40, the High Line at 3:00 and the Oculus at 4:45. Office is still 5:30."},
-  {at:"2026-10-09T11:45", text:"Your car gets to Brooks at 12:14, so the early afternoon slides about ten minutes: lunch at 12:50, cookies at 1:55, the Vessel at 2:45. The High Line at 3:00 and everything after stay put."}
+  {at:"2026-10-09T11:45", text:"Your car gets to Brooks at 12:14, so the early afternoon slides about ten minutes: lunch at 12:50, cookies at 1:55, the Vessel at 2:45. The High Line at 3:00 and everything after stay put."},
+  {at:"2026-10-09T13:27", text:"Lunch ran long, so the afternoon moves about 25 minutes: train at 2:00, cookies at 2:20, the Vessel at 3:10, the High Line at 3:25, the river walk at 4:20. The Oculus is a quick look at 5:05. Office is still 5:30."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -502,16 +503,16 @@ var EVENTS = [
   {d:"2026-10-09", s:"11:06", e:"12:14", t:"Parents land LGA (AA 4777)", ico:"🛬", cal:"between", place:"lga"},
   {d:"2026-10-09", s:"12:14", e:"12:30", t:"Bags at mine", ico:"🧳", cal:"between", place:"home"},
   {d:"2026-10-09", s:"12:30", e:"12:50", t:"Walk to DeKalb Market Hall", ico:"🚶", cal:"between", mode:["walk"], to:"dekalbmkt", note:"About 18 minutes on foot."},
-  {d:"2026-10-09", s:"12:50", e:"13:35", t:"Lunch: DeKalb Market Hall", ico:"🥪", cal:"meal", place:"dekalbmkt", opts:"fri-lunch", note:"A food hall. Everyone picks their own counter."},
-  {d:"2026-10-09", s:"13:35", e:"13:55", t:"B train to NoHo: DeKalb Av to Broadway-Lafayette", ico:"🚇", cal:"between", mode:["transit"], to:"levain", note:"Two stops."},
-  {d:"2026-10-09", s:"13:55", e:"14:10", t:"Levain NoHo", ico:"🍪", cal:"meal", place:"levain"},
-  {d:"2026-10-09", s:"14:10", e:"14:45", t:"Train or car to Hudson Yards", ico:"🚇", cal:"between", mode:["transit","car"], to:"vessel",
+  {d:"2026-10-09", s:"12:50", e:"14:00", t:"Lunch: DeKalb Market Hall", ico:"🥪", cal:"meal", place:"dekalbmkt", opts:"fri-lunch", note:"A food hall. Everyone picks their own counter."},
+  {d:"2026-10-09", s:"14:00", e:"14:20", t:"B train to NoHo: DeKalb Av to Broadway-Lafayette", ico:"🚇", cal:"between", mode:["transit"], to:"levain", note:"Two stops."},
+  {d:"2026-10-09", s:"14:20", e:"14:35", t:"Levain NoHo", ico:"🍪", cal:"meal", place:"levain"},
+  {d:"2026-10-09", s:"14:35", e:"15:10", t:"Train or car to Hudson Yards", ico:"🚇", cal:"between", mode:["transit","car"], to:"vessel",
    note:"Train: B, D, F or M uptown from Broadway-Lafayette to 42 St-Bryant Park, then the 7 two stops to Hudson Yards. About 30 minutes. A car takes about as long in Friday traffic."},
-  {d:"2026-10-09", s:"14:45", e:"15:00", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
+  {d:"2026-10-09", s:"15:10", e:"15:25", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
    note:"Free to see from the plaza. Climbing takes a ticket, and the elevator is out, so it is stairs only."},
-  {d:"2026-10-09", s:"15:00", e:"16:00", t:"High Line, Hudson Yards south to Gansevoort St", ico:"🌿", cal:"fun", place:"highline", path:["highline","gansevoort"], note:"About 1.5 miles. Free, no tickets."},
-  {d:"2026-10-09", s:"16:00", e:"16:45", t:"Walk Hudson River Park to WTC", ico:"🚶", cal:"between", mode:["walk"], to:"oculus", path:["hrp"], note:"About 1.9 miles along the river."},
-  {d:"2026-10-09", s:"16:45", e:"17:15", t:"Oculus", ico:"🕊️", cal:"fun", place:"oculus"},
+  {d:"2026-10-09", s:"15:25", e:"16:20", t:"High Line, Hudson Yards south to Gansevoort St", ico:"🌿", cal:"fun", place:"highline", path:["highline","gansevoort"], note:"About 1.5 miles. Free, no tickets."},
+  {d:"2026-10-09", s:"16:20", e:"17:05", t:"Walk Hudson River Park to WTC", ico:"🚶", cal:"between", mode:["walk"], to:"oculus", path:["hrp"], note:"About 1.9 miles along the river. If we are running late off the High Line, we take a car instead."},
+  {d:"2026-10-09", s:"17:05", e:"17:15", t:"Oculus", ico:"🕊️", cal:"fun", place:"oculus"},
   {d:"2026-10-09", s:"17:15", e:"17:30", t:"1WTC lobby security, IDs out", ico:"🪪", cal:"between", place:"wtc"},
   {d:"2026-10-09", s:"17:30", e:"18:40", t:"Office, 58th floor (sunset view, observatory optional)", ico:"🌇", cal:"fun", place:"wtc", sun:true, tix:"https://www.oneworldobservatory.com/", tixLabel:"Observatory tickets"},
   {d:"2026-10-09", s:"18:40", e:"19:15", t:"Travel to dinner", ico:"🚕", cal:"between"},
