@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Friday, October 9 at 3:48 pm";
+var UPDATED = "Updated Friday, October 9 at 6:03 pm";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -435,7 +435,8 @@ var CHANGES = [
   {at:"2026-10-09T11:45", text:"Your car gets to Brooks at 12:14, so the early afternoon slides about ten minutes: lunch at 12:50, cookies at 1:55, the Vessel at 2:45. The High Line at 3:00 and everything after stay put."},
   {at:"2026-10-09T13:27", text:"Lunch ran long, so the afternoon moves about 25 minutes: train at 2:00, cookies at 2:20, the Vessel at 3:10, the High Line at 3:25, the river walk at 4:20. The Oculus is a quick look at 5:05. Office is still 5:30."},
   {at:"2026-10-09T14:40", text:"Change of plans: from the cookie stop we go to Macy's at Herald Square to find Dad a jacket. The Vessel and the High Line are on hold, and we decide when we walk out of Macy's. The river walk is off for today. Office is still 5:30."},
-  {at:"2026-10-09T15:48", text:"From Macy's we take the train back down to SoHo and browse shops until 4:45, then the R or W train to the Oculus. The Vessel and the High Line are off for today. Office is still 5:30."}
+  {at:"2026-10-09T15:48", text:"From Macy's we take the train back down to SoHo and browse shops until 4:45, then the R or W train to the Oculus. The Vessel and the High Line are off for today. Office is still 5:30."},
+  {at:"2026-10-09T18:03", text:"Friday lunch is done: we ate at DeKalb Market Hall. The lunch places we did not use are now under Other ideas at the bottom of the food list."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -506,7 +507,7 @@ var EVENTS = [
   {d:"2026-10-09", s:"11:06", e:"12:14", t:"Parents land LGA (AA 4777)", ico:"🛬", cal:"between", place:"lga"},
   {d:"2026-10-09", s:"12:14", e:"12:30", t:"Bags at mine", ico:"🧳", cal:"between", place:"home"},
   {d:"2026-10-09", s:"12:30", e:"12:50", t:"Walk to DeKalb Market Hall", ico:"🚶", cal:"between", mode:["walk"], to:"dekalbmkt", note:"About 18 minutes on foot."},
-  {d:"2026-10-09", s:"12:50", e:"14:00", t:"Lunch: DeKalb Market Hall", ico:"🥪", cal:"meal", place:"dekalbmkt", opts:"fri-lunch", note:"A food hall. Everyone picks their own counter."},
+  {d:"2026-10-09", s:"12:50", e:"14:00", t:"Lunch: DeKalb Market Hall", ico:"🥪", cal:"meal", place:"dekalbmkt", note:"A food hall. Everyone picks their own counter."},
   {d:"2026-10-09", s:"14:00", e:"14:20", t:"B train to NoHo: DeKalb Av to Broadway-Lafayette", ico:"🚇", cal:"between", mode:["transit"], to:"levain", note:"Two stops."},
   {d:"2026-10-09", s:"14:20", e:"14:35", t:"Levain NoHo", ico:"🍪", cal:"meal", place:"levain"},
   {d:"2026-10-09", s:"14:35", e:"14:55", t:"Train to Macy's: Broadway-Lafayette to 34 St-Herald Sq", ico:"🚇", cal:"between", mode:["transit"], to:"macys", note:"B, D, F or M uptown. About 10 minutes on the train."},
@@ -573,7 +574,7 @@ var EVENTS = [
    more = Google Maps search used only if inf is missing. ico = emoji shown in the group header.
    order = optional list of restaurant names giving that meal its own running order. */
 var MEALS = [
-  {key:"fri-lunch",     name:"Friday lunch",       where:"DeKalb Market Hall is the plan, or pick another", more:"casual sit-down lunch restaurants", inf:"neighborhoods/fort-greene", ico:"🥪", order:["DeKalb Market Hall", "Sailor", "Evelina", "Walter's", "Junior's", "Lafayette Grand Café"]},
+  {key:"fri-lunch",     name:"Friday lunch",       where:"we ate at DeKalb Market Hall", more:"casual sit-down lunch restaurants", inf:"neighborhoods/fort-greene", ico:"🥪", order:["DeKalb Market Hall"]},
   {key:"fri-dinner",    name:"Friday dinner",      where:"Dad's birthday", more:"casual steak restaurants", inf:"cuisines/steaks", ico:"🎂", order:["The Odeon", "French Louie", "Walter's", "Bubby's", "Fraunces Tavern", "Colonia Verde"]},
   {key:"sat-breakfast", name:"Saturday breakfast", where:"near the hotel", more:"breakfast diner", inf:"perfect-for/breakfast", ico:"🍳"},
   {key:"sat-lunch",     name:"Saturday lunch",     where:"back in Brooklyn after the ferry", more:"casual sit-down lunch restaurants", inf:"perfect-for/lunch", ico:"🥪"},
@@ -602,14 +603,14 @@ var CUISINES = ["Steak", "Italian", "French", "American", "Mediterranean and Per
    unpicked meal lists it; leave them off and it simply does not show on the map, d = description shown when tapped, p = optional photo path published with the page. */
 var EATS = [
   {n:"DeKalb Market Hall", k:"Food hall, Downtown Brooklyn", area:"Brooklyn", cui:"Food hall", meals:["fri-lunch"], q:"DeKalb Market Hall 445 Albee Square West Brooklyn", w:"http://dekalbmarkethall.com/",
-   d:"The plan for Friday's lunch, unless you pick another. A big food hall with about 40 counters, so everyone picks their own: sandwiches, pizza, barbecue, noodles, salads. Lots of seats, no waiting for a table. It is right at the train we take to the cookie stop."},
-  {n:"Sailor", k:"American bistro, Fort Greene", area:"Brooklyn", cui:"American", meals:["fri-lunch"], q:"Sailor 228 DeKalb Ave Brooklyn",
-   d:"A handsome little bistro half a block from my place, from a well-known chef. A very good burger, salads and simple dishes done well. The nicest room of the lunch options, and a little pricier."},
-  {n:"Evelina", k:"Italian, Fort Greene", area:"Brooklyn", cui:"Italian", meals:["fri-lunch"], q:"Evelina 211 DeKalb Ave Brooklyn", w:"http://www.evelinabk.com/",
-   d:"A pretty Italian spot a block from my place. Fresh pasta, salads, and eggs if you want breakfast food. Lunch runs until 3:30."},
-  {n:"Walter's", k:"American, Fort Greene", area:"Brooklyn", cui:"American", meals:["fri-lunch", "fri-dinner"], q:"Walter's 166 DeKalb Ave Brooklyn", w:"http://waltersbrooklyn.com/", r:"https://waltersbrooklyn.com/",
+   d:"Where we had Friday's lunch. A big food hall with about 40 counters, so everyone picks their own: sandwiches, pizza, barbecue, noodles, salads. Lots of seats, no waiting for a table."},
+  {n:"Sailor", k:"American bistro, Fort Greene", area:"Brooklyn", cui:"American", meals:[], q:"Sailor 228 DeKalb Ave Brooklyn",
+   d:"A handsome little bistro half a block from my place, from a well-known chef. A very good burger, salads and simple dishes done well. A lovely room, and a little pricier."},
+  {n:"Evelina", k:"Italian, Fort Greene", area:"Brooklyn", cui:"Italian", meals:[], q:"Evelina 211 DeKalb Ave Brooklyn", w:"http://www.evelinabk.com/",
+   d:"A pretty Italian spot a block from my place. Fresh pasta and salads, eggs at lunch, and a strip steak at dinner. Lunch runs until 3:30 and dinner starts at 5."},
+  {n:"Walter's", k:"American, Fort Greene", area:"Brooklyn", cui:"American", meals:["fri-dinner"], q:"Walter's 166 DeKalb Ave Brooklyn", w:"http://waltersbrooklyn.com/", r:"https://waltersbrooklyn.com/",
    d:"A neighborhood favorite across from Fort Greene Park, a five minute walk from my place. Steak and fries, a good burger, salads. Easy and comfortable."},
-  {n:"Junior's", k:"Diner and cheesecake, Downtown Brooklyn", area:"Brooklyn", cui:"American", meals:["fri-lunch", "sat-breakfast", "mon-breakfast"], q:"Junior's Restaurant 386 Flatbush Ave Ext Brooklyn", lat:40.6902, lon:-73.9819, mlat:40.6912, mlon:-73.9836, lab:"t", w:"http://www.juniorscheesecake.com/",
+  {n:"Junior's", k:"Diner and cheesecake, Downtown Brooklyn", area:"Brooklyn", cui:"American", meals:["sat-breakfast", "mon-breakfast"], q:"Junior's Restaurant 386 Flatbush Ave Ext Brooklyn", lat:40.6902, lon:-73.9819, mlat:40.6912, mlon:-73.9836, lab:"t", w:"http://www.juniorscheesecake.com/",
    d:"A Brooklyn diner since 1950, five minutes on foot from your hotel. Eggs, pancakes, big sandwiches, and the most famous cheesecake in New York. Casual and quick."},
   {n:"Black Seed Bagels", k:"Bagels and egg sandwiches, in your hotel", area:"Brooklyn", cui:"Bakery and coffee", meals:["mon-breakfast"], q:"Black Seed Bagels 252 Schermerhorn St Brooklyn", lat:40.6876, lon:-73.9838, mlat:40.6866, mlon:-73.9806, lab:"r", s:"Black Seed", w:"https://www.blackseedbagels.com/",
    d:"A bagel shop on the ground floor of your hotel, right beside the front door. Fresh bagels, bacon, egg and cheese sandwiches, coffee. You order at the counter. Only a few seats, so it is the fastest choice."},
@@ -617,8 +618,8 @@ var EATS = [
    d:"A tiny, pretty café four minutes on foot from your hotel. Sweet and savory crêpes, egg dishes, and flavored lattes. Very small, so we may have to wait for a table."},
   {n:"L'Appartement 4F", k:"French bakery, Brooklyn Heights", area:"Brooklyn", cui:"Bakery and coffee", meals:["mon-breakfast"], q:"L'Appartement 4F 115 Montague St Brooklyn", lat:40.6952, lon:-73.9951, lab:"l", w:"https://www.lappartement4f.com/",
    d:"A small French bakery known for some of the best croissants in New York, plus cinnamon rolls and vanilla lattes. It is on a pretty street in Brooklyn Heights, a 15 minute walk from your hotel. It opens at 8:00 and there may be a short line."},
-  {n:"Lafayette Grand Café", k:"French café and bakery, NoHo", area:"Downtown Manhattan", cui:"French", meals:["fri-lunch"], q:"Lafayette Grand Café 380 Lafayette St New York", w:"http://www.lafayetteny.com/", r:"https://www.lafayetteny.com/reservations/",
-   d:"A big, sunny French café with a bakery up front. Simple food done well: steak and fries, salads, omelets. Relaxed, with room to talk. It is in Manhattan, one block from the cookie stop, so we would take the train first and eat after."},
+  {n:"Lafayette Grand Café", k:"French café and bakery, NoHo", area:"Downtown Manhattan", cui:"French", meals:[], q:"Lafayette Grand Café 380 Lafayette St New York", w:"http://www.lafayetteny.com/", r:"https://www.lafayetteny.com/reservations/",
+   d:"A big, sunny French café with a bakery up front. Simple food done well: steak and fries, salads, omelets. Relaxed, with room to talk. It is in Manhattan, one block from Levain, the cookie stop."},
   {n:"Balthazar", k:"French, SoHo", area:"Downtown Manhattan", cui:"French", meals:["sun-dinner"], w:"http://www.balthazarny.com/", r:"https://balthazarny.com/make-booking/",
    d:"A New York classic that looks like an old Paris restaurant, with tall mirrors and red booths. Steak and fries for Dad, onion soup, great bread. Lively and a little loud. Mom will love the room."},
   {n:"Thai Diner", k:"Thai and American, Nolita", area:"Downtown Manhattan", cui:"Asian", meals:["sun-dinner"], w:"http://www.thaidiner.com/", r:"https://resy.com/cities/new-york-ny/venues/thai-diner",
