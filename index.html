@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Friday, October 9 at 1:27 pm";
+var UPDATED = "Updated Friday, October 9 at 2:40 pm";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -433,7 +433,8 @@ var CHANGES = [
   {at:"2026-10-09T10:45", text:"Friday: we may take the train from the cookie stop to Hudson Yards, so that leg is longer. The Vessel is now at 3:00, the High Line at 3:15 and the Oculus at 4:55. Office is still 5:30."},
   {at:"2026-10-09T11:10", text:"You landed early, so Friday starts sooner: lunch at 12:40, cookies at 1:50, the Vessel at 2:40, the High Line at 3:00 and the Oculus at 4:45. Office is still 5:30."},
   {at:"2026-10-09T11:45", text:"Your car gets to Brooks at 12:14, so the early afternoon slides about ten minutes: lunch at 12:50, cookies at 1:55, the Vessel at 2:45. The High Line at 3:00 and everything after stay put."},
-  {at:"2026-10-09T13:27", text:"Lunch ran long, so the afternoon moves about 25 minutes: train at 2:00, cookies at 2:20, the Vessel at 3:10, the High Line at 3:25, the river walk at 4:20. The Oculus is a quick look at 5:05. Office is still 5:30."}
+  {at:"2026-10-09T13:27", text:"Lunch ran long, so the afternoon moves about 25 minutes: train at 2:00, cookies at 2:20, the Vessel at 3:10, the High Line at 3:25, the river walk at 4:20. The Oculus is a quick look at 5:05. Office is still 5:30."},
+  {at:"2026-10-09T14:40", text:"Change of plans: from the cookie stop we go to Macy's at Herald Square to find Dad a jacket. The Vessel and the High Line are on hold, and we decide when we walk out of Macy's. The river walk is off for today. Office is still 5:30."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -460,6 +461,7 @@ var PLACES = {
   oculus:  {name:"Oculus", addr:"185 Greenwich St, New York, NY 10007", lat:40.7114, lon:-74.0113, mlat:40.7100, mlon:-74.0060, lab:"r", s:"Oculus"},
   gansevoort:{name:"Gansevoort St, south end of the High Line", addr:"Gansevoort St at Washington St, New York, NY 10014", lat:40.7396, lon:-74.0095, way:true},
   hrp:     {name:"Hudson River Park", addr:"West St at Canal St, New York, NY 10013", lat:40.7200, lon:-74.0128, way:true},
+  macys:   {name:"Macy's Herald Square", addr:"151 W 34th St, New York, NY 10001", lat:40.7508, lon:-73.9895, lab:"r", s:"Macy's"},
   levain:  {name:"Levain Bakery", addr:"340 Lafayette St, New York, NY 10012", lat:40.7262, lon:-73.9946, lab:"r", s:"Levain"},
   soho:    {name:"SoHo", addr:"Manhattan, New York, NY", lat:40.7233, lon:-74.0030, lab:"l", s:"SoHo"},
   wtc:     {name:"One World Trade Center", addr:"285 Fulton St, New York, NY 10007", lat:40.7130, lon:-74.0132, lab:"l", s:"One World Trade"},
@@ -506,13 +508,14 @@ var EVENTS = [
   {d:"2026-10-09", s:"12:50", e:"14:00", t:"Lunch: DeKalb Market Hall", ico:"🥪", cal:"meal", place:"dekalbmkt", opts:"fri-lunch", note:"A food hall. Everyone picks their own counter."},
   {d:"2026-10-09", s:"14:00", e:"14:20", t:"B train to NoHo: DeKalb Av to Broadway-Lafayette", ico:"🚇", cal:"between", mode:["transit"], to:"levain", note:"Two stops."},
   {d:"2026-10-09", s:"14:20", e:"14:35", t:"Levain NoHo", ico:"🍪", cal:"meal", place:"levain"},
-  {d:"2026-10-09", s:"14:35", e:"15:10", t:"Train or car to Hudson Yards", ico:"🚇", cal:"between", mode:["transit","car"], to:"vessel",
-   note:"Train: B, D, F or M uptown from Broadway-Lafayette to 42 St-Bryant Park, then the 7 two stops to Hudson Yards. About 30 minutes. A car takes about as long in Friday traffic."},
-  {d:"2026-10-09", s:"15:10", e:"15:25", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
+  {d:"2026-10-09", s:"14:35", e:"14:55", t:"Train to Macy's: Broadway-Lafayette to 34 St-Herald Sq", ico:"🚇", cal:"between", mode:["transit"], to:"macys", note:"B, D, F or M uptown. About 10 minutes on the train."},
+  {d:"2026-10-09", s:"14:55", e:"15:40", t:"Macy's Herald Square: jacket for Dad", ico:"🧥", cal:"fun", place:"macys", note:"We check the clock on the way out and decide about the Vessel and the High Line then."},
+  {d:"2026-10-09", s:"15:40", e:"15:55", t:"On hold: walk Macy's to Hudson Yards", ico:"🚶", cal:"between", mode:["walk"], to:"vessel", note:"Only if we are out of Macy's by about 3:40. West along 34th St, about 15 minutes."},
+  {d:"2026-10-09", s:"15:55", e:"16:05", t:"On hold: Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
    note:"Free to see from the plaza. Climbing takes a ticket, and the elevator is out, so it is stairs only."},
-  {d:"2026-10-09", s:"15:25", e:"16:20", t:"High Line, Hudson Yards south to Gansevoort St", ico:"🌿", cal:"fun", place:"highline", path:["highline","gansevoort"], note:"About 1.5 miles. Free, no tickets."},
-  {d:"2026-10-09", s:"16:20", e:"17:05", t:"Walk Hudson River Park to WTC", ico:"🚶", cal:"between", mode:["walk"], to:"oculus", path:["hrp"], note:"About 1.9 miles along the river. If we are running late off the High Line, we take a car instead."},
-  {d:"2026-10-09", s:"17:05", e:"17:15", t:"Oculus", ico:"🕊️", cal:"fun", place:"oculus"},
+  {d:"2026-10-09", s:"16:05", e:"16:50", t:"On hold: High Line, Hudson Yards south to Gansevoort St", ico:"🌿", cal:"fun", place:"highline", path:["highline","gansevoort"], note:"About 1.5 miles. Free, no tickets. If time is short we walk part of it and come off at 23rd St."},
+  {d:"2026-10-09", s:"16:50", e:"17:10", t:"To WTC: car from the High Line, or subway from Macy's", ico:"🚕", cal:"between", mode:["car","transit"], to:"oculus", path:["hrp"], note:"The river walk no longer fits today. A car down West St if we did the High Line, the subway from Herald Square if we skipped it."},
+  {d:"2026-10-09", s:"17:10", e:"17:15", t:"Oculus", ico:"🕊️", cal:"fun", place:"oculus"},
   {d:"2026-10-09", s:"17:15", e:"17:30", t:"1WTC lobby security, IDs out", ico:"🪪", cal:"between", place:"wtc"},
   {d:"2026-10-09", s:"17:30", e:"18:40", t:"Office, 58th floor (sunset view, observatory optional)", ico:"🌇", cal:"fun", place:"wtc", sun:true, tix:"https://www.oneworldobservatory.com/", tixLabel:"Observatory tickets"},
   {d:"2026-10-09", s:"18:40", e:"19:15", t:"Travel to dinner", ico:"🚕", cal:"between"},
@@ -1356,7 +1359,7 @@ var BRIDGES = [
   [[40.7170,-73.9860],[40.7105,-73.9640]]
 ];
 var GEO = [
-  {t:"MANHATTAN", lat:40.7530, lon:-73.9860, s:17},
+  {t:"MANHATTAN", lat:40.7605, lon:-73.9915, s:17},
   {t:"BROOKLYN", lat:40.6770, lon:-73.9600, s:17},
   {t:"NEW JERSEY", lat:40.7640, lon:-74.0330, s:11},
   {t:"LIBERTY ISLAND", lat:40.6862, lon:-74.0425, s:8},
