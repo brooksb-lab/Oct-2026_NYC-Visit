@@ -351,6 +351,15 @@ nav.jump a.nowbar{display:flex;align-items:center;gap:8px;height:31px;margin-inl
 .subhint .chev{width:16px;height:16px}
 details.go[open] ~ .subhint{display:none}
 
+/* tickets: a check box under the ticket link, and a small tag by the title once it is checked */
+.tixrow{margin:0 0 4px;padding-left:21px}
+.tixrow.out{padding-left:0}
+.tixdone{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:15px;font-weight:700;color:var(--ink);background:none;border:0;padding:5px 0 7px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tixdone .cb{flex:none;width:20px;height:20px;border:2px solid var(--ink);border-radius:4px;display:grid;place-items:center}
+.tixdone[aria-pressed="true"] .cb{background:var(--ink)}
+.tixdone[aria-pressed="true"] .cb::after{content:"";width:10px;height:5px;border-left:2.5px solid var(--bg);border-bottom:2.5px solid var(--bg);transform:translateY(-1.5px) rotate(-45deg)}
+.tixtag{display:inline-block;font-weight:700;font-size:12px;letter-spacing:0;color:var(--bg);background:var(--ink);padding:1px 6px;border-radius:3px;margin-left:8px;vertical-align:2px;white-space:nowrap}
+
 /* emoji before an event title */
 .t .ti{display:inline-block;margin-right:.35em;font-weight:400}
 </style>
@@ -478,6 +487,8 @@ var PLACES = {
    now to the leg's destination, set to that way of travelling; two modes give two links. dest: key in PLACES for the
    destination when it is not the leg's own place (a leg pinned at the station it starts from).
    tix: ticket or booking link, shown in the stop's pin menu when it is opened. tixLabel = its text ("Tickets" if omitted).
+   Every tix link gets a "Purchased" check box under it ("Booked" for a table). A tap is remembered on that phone only.
+   bought:true = it is bought: the box starts checked for everyone. Stops that share one tix link share one check.
    links:[[label, url], ...] = more links in the stop's pin menu (an info page, a map).
    path:[keys] = the places the map's route line runs through during this event, in order, when that is more than
    the event's own place (a leg that starts at the hotel, a ferry that lands back at the pier, a bend in a walk).
@@ -841,6 +852,16 @@ function mapLink(date, key){
   a.addEventListener("click", function(){ mapSeen = true; showMapDay(date); setTimeout(function(){ flashPin(key); }, 650); });
   return a;
 }
+/* tickets: a check box under each ticket link. A tap is kept on this phone; bought:true in the data checks it for everyone.
+   Stops with the same ticket link (the two ferries) share one check. */
+var boughtMap = store.get("bought", {});
+function isBought(e){ return boughtMap[e.tix] != null ? !!boughtMap[e.tix] : !!e.bought; }
+function paintBought(root){
+  each((root || document).querySelectorAll("[data-tix]"), function(n){
+    var e = EVENTS[+n.getAttribute("data-tix")], on = isBought(e);
+    if (n.tagName === "BUTTON") n.setAttribute("aria-pressed", String(on)); else n.hidden = !on;
+  });
+}
 function stopLi(e){
   var f = fmt(e.s), pk = evPlace(e), p = pk ? PLACES[pk] : null, dest = !p && e.to ? PLACES[e.to] : null;
   var time = el("div", {"class":"time"}, [el("span", {"class":"tt", text:f.t}), el("small", {text:f.ap})]);
@@ -850,7 +871,18 @@ function stopLi(e){
   if (dest) what.appendChild(goMenu(dest, "To " + dest.name, null, modes, target));
   if (e.tix){
     var tl = el("a", {href:e.tix, target:"_blank", rel:"noopener", text:e.tixLabel || "Tickets"}), lk = what.querySelector("details.go .links");
-    if (lk) lk.appendChild(tl); else what.appendChild(el("p", {"class":"links"}, [tl]));
+    if (lk) lk.appendChild(tl); else { lk = el("p", {"class":"links"}, [tl]); what.appendChild(lk); }
+    var word = /reserv/i.test(e.tixLabel || "") ? "Booked" : "Purchased";
+    var box = el("button", {type:"button", "class":"tixdone", "data-tix":String(e.i), "aria-pressed":"false"}, [el("span", {"class":"cb", "aria-hidden":"true"}), el("span", {text:word})]);
+    box.addEventListener("click", function(ev){
+      ev.stopPropagation();
+      boughtMap[e.tix] = isBought(e) ? 0 : 1; store.set("bought", boughtMap);
+      paintBought();
+    });
+    lk.parentNode.insertBefore(el("p", {"class":"tixrow" + (lk.parentNode === what ? " out" : "")}, [box]), lk.nextSibling);
+    /* once it is bought, a small tag by the title says so without opening the stop */
+    what.querySelector("p.t").appendChild(el("span", {"class":"tixtag", "data-tix":String(e.i), hidden:"", text:"\u2713 " + word}));
+    paintBought(what);
   }
   if (e.links){
     var lr = what.querySelector("details.go .links");
