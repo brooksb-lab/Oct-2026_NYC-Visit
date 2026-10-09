@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Friday, October 9 at 6:07 pm";
+var UPDATED = "Updated Friday, October 9 at 6:20 pm";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -437,7 +437,8 @@ var CHANGES = [
   {at:"2026-10-09T14:40", text:"Change of plans: from the cookie stop we go to Macy's at Herald Square to find Dad a jacket. The Vessel and the High Line are on hold, and we decide when we walk out of Macy's. The river walk is off for today. Office is still 5:30."},
   {at:"2026-10-09T15:48", text:"From Macy's we take the train back down to SoHo and browse shops until 4:45, then the R or W train to the Oculus. The Vessel and the High Line are off for today. Office is still 5:30."},
   {at:"2026-10-09T18:03", text:"Friday lunch is done: we ate at DeKalb Market Hall. The lunch places we did not use are now under Other ideas at the bottom of the food list."},
-  {at:"2026-10-09T18:07", text:"Friday dinner: four places on my street are now at the top of the list. Colonia Verde, Evelina, Walter's and Sailor."}
+  {at:"2026-10-09T18:07", text:"Friday dinner: four places on my street are now at the top of the list. Colonia Verde, Evelina, Walter's and Sailor."},
+  {at:"2026-10-09T18:20", text:"The Tribeca restaurants are off the food list."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -576,7 +577,7 @@ var EVENTS = [
    order = optional list of restaurant names giving that meal its own running order. */
 var MEALS = [
   {key:"fri-lunch",     name:"Friday lunch",       where:"we ate at DeKalb Market Hall", more:"casual sit-down lunch restaurants", inf:"neighborhoods/fort-greene", ico:"🥪", order:["DeKalb Market Hall"]},
-  {key:"fri-dinner",    name:"Friday dinner",      where:"Dad's birthday", more:"casual steak restaurants", inf:"cuisines/steaks", ico:"🎂", order:["Colonia Verde", "Evelina", "Walter's", "Sailor", "The Odeon", "French Louie", "Bubby's", "Fraunces Tavern"]},
+  {key:"fri-dinner",    name:"Friday dinner",      where:"Dad's birthday", more:"casual steak restaurants", inf:"cuisines/steaks", ico:"🎂", order:["Colonia Verde", "Evelina", "Walter's", "Sailor", "French Louie", "Fraunces Tavern"]},
   {key:"sat-breakfast", name:"Saturday breakfast", where:"near the hotel", more:"breakfast diner", inf:"perfect-for/breakfast", ico:"🍳"},
   {key:"sat-lunch",     name:"Saturday lunch",     where:"back in Brooklyn after the ferry", more:"casual sit-down lunch restaurants", inf:"perfect-for/lunch", ico:"🥪"},
   {key:"sat-dinner",    name:"Saturday dinner",    where:"Brooklyn", more:"casual steak and American restaurants", inf:"perfect-for/dinner-with-the-parents", ico:"🍽️"},
@@ -587,7 +588,7 @@ var MEALS = [
 /* Group order for the Location and Cuisine views. MORE_Q = "More options" search text for a cuisine group
    when the group name alone would search badly; other cuisines search "<name> restaurants". */
 /* INF = Infatuation page for each Location and Cuisine group's "More options" link. A group with no entry falls back to a Google Maps search. */
-var INF = {"Downtown Manhattan":"neighborhoods/tribeca", "Uptown":"neighborhoods/upper-east-side", "Brooklyn":"neighborhoods/fort-greene",
+var INF = {"Uptown":"neighborhoods/upper-east-side", "Brooklyn":"neighborhoods/fort-greene",
   "Steak":"cuisines/steaks", "Italian":"cuisines/italian", "French":"cuisines/french", "American":"cuisines/american",
   "Mediterranean and Persian":"cuisines/mediterranean", "Asian":"cuisines/thai", "Latin American":"cuisines/latin"};
 var MORE_Q = {"Uptown":"casual restaurants on the Upper East Side, New York", "Steak":"steakhouse", "Mediterranean and Persian":"Mediterranean restaurants", "Asian":"Thai and Chinese restaurants", "Food hall":"food hall", "Bakery and coffee":"bagels and coffee"};
@@ -627,8 +628,6 @@ var EATS = [
    d:"A fun, colorful diner that serves Thai food next to American comfort food. Some dishes are spicy, but plenty are mild: fried chicken, noodles, an egg sandwich. It is popular, so there can be a short wait."},
   {n:"Jiang Nan", k:"Chinese, Bowery", area:"Downtown Manhattan", cui:"Asian", meals:["sun-dinner"], q:"Jiang Nan 103 Bowery", w:"https://jiangnanny.com/",
    d:"A handsome, comfortable Chinese restaurant. The Peking duck is the thing to order, and the menu is big, so you pick a few dishes to share. Nothing has to be spicy."},
-  {n:"Locanda Verde", k:"Italian, Tribeca", area:"Downtown Manhattan", cui:"Italian", meals:["sun-dinner"], w:"http://locandaverdenyc.com/", r:"https://www.locandaverdenyc.com/reservations/",
-   d:"A warm, busy Italian restaurant inside Robert De Niro's hotel. Very good pasta and a roast chicken people come back for. It feels special without being stiff."},
   {n:"Dear Margo", k:"Mediterranean, Upper East Side", area:"Uptown", cui:"Mediterranean and Persian", meals:["sun-lunch"], w:"https://dearmargo.com/",
    d:"Fresh, bright Mediterranean food made for sharing: warm bread with hummus, grilled fish, chicken, salads. Healthy and easy to like. A five minute walk from the Frick."},
   {n:"Central Park Boathouse", k:"American, in Central Park", area:"Uptown", cui:"American", meals:["sun-lunch"], w:"https://centralparkboathouse.com/", r:"https://www.opentable.com/r/central-park-boathouse-new-york-2",
@@ -643,12 +642,8 @@ var EATS = [
    d:"Persian food, which is milder than it sounds: fresh-baked bread, dips, grilled kebabs, crispy rice. The most adventurous place on this list. Dinner only, and a car ride from the hotel."},
   {n:"French Louie", k:"American bistro, Boerum Hill", area:"Brooklyn", cui:"French", meals:["fri-dinner"], q:"French Louie 320 Atlantic Ave Brooklyn", w:"https://www.frenchlouienyc.com/", r:"https://www.opentable.com/r/french-louie-brooklyn",
    d:"A relaxed neighborhood bistro with a garden, a short walk from your hotel. The dry-aged steak comes with fries and a house steak sauce. Calm, comfortable, easy to talk."},
-  {n:"Bubby's", k:"American comfort food, Tribeca", area:"Downtown Manhattan", cui:"American", meals:["fri-dinner"], q:"Bubby's 120 Hudson St New York", w:"https://www.bubbys.com/", r:"https://www.bubbys.com/reservations-plus-waitlist",
-   d:"American comfort food in a big, friendly room: a New York strip steak, fried chicken, burgers and well-known pies. Nothing on the menu needs explaining. A 12 minute walk from my office."},
   {n:"Fraunces Tavern", k:"Historic tavern, Financial District", area:"Downtown Manhattan", cui:"American", meals:["fri-dinner"], q:"Fraunces Tavern 54 Pearl St New York", w:"http://www.frauncestavern.com/", r:"https://frauncestavern.com/-reserve",
    d:"A tavern from 1762. George Washington said goodbye to his officers here, and there is a small museum upstairs. Pub food: steak, fish and chips, pot pie. You go for the building and the history. A 15 minute walk from my office."},
-  {n:"The Odeon", k:"French, Tribeca", area:"Downtown Manhattan", cui:"French", meals:["fri-dinner"], q:"The Odeon 145 West Broadway New York", w:"http://www.theodeonrestaurant.com/", r:"https://www.opentable.com/restref/client/?rid=2221&restref=2221",
-   d:"A Tribeca favorite since 1980, with a glowing neon sign and a big, lively dining room. Steak and fries, roast chicken, a very good burger. Fun without being fancy. A ten minute walk from my office."}
 ];
 /* ============ END DATA ============ */
 
