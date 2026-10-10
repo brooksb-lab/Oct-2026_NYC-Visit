@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Saturday, October 10 at 10:16 am";
+var UPDATED = "Updated Saturday, October 10 at 10:50 am";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -442,7 +442,8 @@ var CHANGES = [
   {at:"2026-10-09T20:58", text:"Saturday is new. The High Line in the morning, the Vessel at 11, lunch at the café inside the Brooklyn Botanic Garden, then the garden. Governors Island is off for now."},
   {at:"2026-10-10T08:24", text:"Saturday starts at 9:30 now, so everything is about half an hour later. No sit-down breakfast: we grab something small at the hotel and save room for lunch at 1:10."},
   {at:"2026-10-10T09:33", text:"We meet at the Starbucks by the hotel at 9:45 and leave at 10:00. The High Line is at 10:45, the Vessel at noon, lunch at 1:35 and the garden at 2:40."},
-  {at:"2026-10-10T10:16", text:"Breakfast at Black Seed Bagels in the hotel first, then we go. The train is at 10:50, the High Line at 11:35, the Vessel at 12:40, lunch at 2:10 and the garden at 3:10."}
+  {at:"2026-10-10T10:16", text:"Breakfast at Black Seed Bagels in the hotel first, then we go. The train is at 10:50, the High Line at 11:35, the Vessel at 12:40, lunch at 2:10 and the garden at 3:10."},
+  {at:"2026-10-10T10:50", text:"New order for today. Skechers on 34th St first, then the Vessel, then the High Line heading south to the Starbucks Roastery for coffee and lunch around 2:00. After that we drop bags at the hotel and go to the Botanic Garden at about 4:00."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -469,6 +470,7 @@ var PLACES = {
   oculus:  {name:"Oculus", addr:"185 Greenwich St, New York, NY 10007", lat:40.7114, lon:-74.0113, mlat:40.7100, mlon:-74.0060, lab:"r", s:"Oculus"},
   gansevoort:{name:"Gansevoort St, south end of the High Line", addr:"Gansevoort St at Washington St, New York, NY 10014", lat:40.7396, lon:-74.0095, way:true},
   hrp:     {name:"Hudson River Park", addr:"West St at Canal St, New York, NY 10013", lat:40.7200, lon:-74.0128, way:true},
+  skechers:{name:"Skechers", addr:"134 W 34th St, New York, NY 10001", lat:40.7502, lon:-73.9895, lab:"r", s:"Skechers"},
   macys:   {name:"Macy's Herald Square", addr:"151 W 34th St, New York, NY 10001", lat:40.7508, lon:-73.9895, lab:"r", s:"Macy's"},
   levain:  {name:"Levain Bakery", addr:"340 Lafayette St, New York, NY 10012", lat:40.7262, lon:-73.9946, lab:"r", s:"Levain"},
   soho:    {name:"SoHo", addr:"Manhattan, New York, NY", lat:40.7233, lon:-74.0030, lab:"l", s:"SoHo"},
@@ -535,15 +537,18 @@ var EVENTS = [
   {d:"2026-10-09", s:"20:45", e:"21:45", t:"Car with bags from mine to the Ace, check-in", ico:"🛎️", cal:"between", mode:["car"], place:"ace", path:["home","ace"]},
 
   {d:"2026-10-10", s:"09:45", e:"10:20", t:"Coffee: Starbucks by the Ace", ico:"☕", cal:"meal", place:"ace", note:"The Starbucks at Fulton St and Bond St, four minutes from the hotel."},
-  {d:"2026-10-10", s:"10:20", e:"10:50", t:"Breakfast: Black Seed Bagels", ico:"🥯", cal:"meal", place:"ace", note:"A quick breakfast in the hotel lobby before the train."},
-  {d:"2026-10-10", s:"10:50", e:"11:35", t:"A or C train to the High Line: Hoyt-Schermerhorn to 14 St", ico:"🚇", cal:"between", mode:["transit"], to:"hlsouth", path:["ace","hlsouth"], note:"The station is next to the hotel. From 14 St it is an 8 minute walk to the High Line stairs."},
-  {d:"2026-10-10", s:"11:35", e:"12:40", t:"High Line, Gansevoort St north to Hudson Yards", ico:"🌿", cal:"fun", place:"hlsouth", note:"About 1.5 miles. Free, no tickets. It ends beside the Vessel."},
-  {d:"2026-10-10", s:"12:40", e:"13:10", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
+  {d:"2026-10-10", s:"10:20", e:"11:05", t:"Breakfast: Black Seed Bagels", ico:"🥯", cal:"meal", place:"ace", note:"A quick breakfast in the hotel lobby. Then the computer bags go up to the room."},
+  {d:"2026-10-10", s:"11:05", e:"11:35", t:"A or C train to 34th St", ico:"🚇", cal:"between", mode:["transit"], to:"skechers", path:["ace","skechers"], note:"From Hoyt-Schermerhorn, next to the hotel, to 34 St-Penn Station. Then a short walk east on 34th St."},
+  {d:"2026-10-10", s:"11:35", e:"12:15", t:"Skechers, 34th St", ico:"👟", cal:"fun", place:"skechers"},
+  {d:"2026-10-10", s:"12:15", e:"12:35", t:"Walk 34th St west to the Vessel", ico:"🚶", cal:"between", mode:["walk"], to:"vessel", note:"Straight west on 34th St. About 15 minutes."},
+  {d:"2026-10-10", s:"12:35", e:"12:55", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
    note:"Free to see from the plaza. Climbing takes a timed ticket, and it is mostly stairs."},
-  {d:"2026-10-10", s:"13:10", e:"14:10", t:"7 and Q trains to the Botanic Garden", ico:"🚇", cal:"between", mode:["transit"], to:"bbg", note:"The 7 one stop to Times Square, then the Q to Prospect Park. We go in at the Flatbush Avenue entrance, away from the parade."},
-  {d:"2026-10-10", s:"14:10", e:"15:10", t:"Lunch: Yellow Magnolia Café", ico:"🥪", cal:"meal", place:"bbg", opts:"sat-lunch", note:"Inside the garden, looking out on Magnolia Plaza. We buy garden tickets at the gate on the way in."},
-  {d:"2026-10-10", s:"15:10", e:"17:10", t:"Brooklyn Botanic Garden (Japanese Hill-and-Pond Garden first)", ico:"🌿", cal:"fun", place:"bbg", tix:"https://www.bbg.org/tickets", note:"Tickets are sold at the gate. No set entry time."},
-  {d:"2026-10-10", s:"17:10", e:"19:00", t:"Back to the Ace, rest", ico:"🛋️", cal:"fun", mode:["transit","car"], place:"ace", note:"The Q three stops to DeKalb Av, then a short walk."},
+  {d:"2026-10-10", s:"12:55", e:"14:00", t:"High Line, Hudson Yards south to 14th St", ico:"🌿", cal:"fun", place:"highline", note:"About 1.3 miles. Free, no tickets. We come off at 14th St, a block from the Roastery."},
+  {d:"2026-10-10", s:"14:00", e:"15:00", t:"Starbucks Reserve Roastery and lunch", ico:"☕", cal:"meal", place:"roast", opts:"sat-lunch", note:"Coffee first. Lunch is at the bakery counter here, or across the street at Chelsea Market."},
+  {d:"2026-10-10", s:"15:00", e:"15:40", t:"A or C train back to the Ace, drop bags", ico:"🚇", cal:"between", mode:["transit"], place:"ace", note:"From 14 St to Hoyt-Schermerhorn. Shopping bags go up to the room."},
+  {d:"2026-10-10", s:"15:40", e:"16:05", t:"Q train to the Botanic Garden", ico:"🚇", cal:"between", mode:["transit"], to:"bbg", note:"From DeKalb Av three stops to Prospect Park. We go in at the Flatbush Avenue entrance, away from the parade."},
+  {d:"2026-10-10", s:"16:05", e:"17:45", t:"Brooklyn Botanic Garden (Japanese Hill-and-Pond Garden first)", ico:"🌿", cal:"fun", place:"bbg", tix:"https://www.bbg.org/tickets", note:"Tickets are sold at the gate. Last entry is 5:30 and it closes at 6."},
+  {d:"2026-10-10", s:"17:45", e:"19:00", t:"Back to the Ace, rest", ico:"🛋️", cal:"fun", mode:["transit","car"], place:"ace", note:"The Q three stops to DeKalb Av, then a short walk."},
   {d:"2026-10-10", s:"19:00", e:"20:30", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sat-dinner"},
 
   {d:"2026-10-11", s:"08:00", e:"08:30", t:"A/C from Hoyt-Schermerhorn to Meatpacking", ico:"🚇", cal:"between", mode:["transit"], dest:"roast", place:"hoyt"},
@@ -577,7 +582,7 @@ var EVENTS = [
 var MEALS = [
   {key:"fri-lunch",     name:"Friday lunch",       where:"we ate at DeKalb Market Hall", more:"casual sit-down lunch restaurants", inf:"neighborhoods/fort-greene", ico:"🥪", order:["DeKalb Market Hall"]},
   {key:"fri-dinner",    name:"Friday dinner",      where:"Dad's birthday", more:"casual steak restaurants", inf:"cuisines/steaks", ico:"🎂", order:["Colonia Verde", "Evelina", "Walter's", "Sailor", "French Louie", "Fraunces Tavern"]},
-  {key:"sat-lunch",     name:"Saturday lunch",     where:"Yellow Magnolia Café is the plan, or pick another", more:"casual sit-down lunch restaurants", inf:"perfect-for/lunch", ico:"🥪", order:["Yellow Magnolia Café", "gertrude's", "The Vaux", "Tom's Restaurant"]},
+  {key:"sat-lunch",     name:"Saturday lunch",     where:"by the Roastery, or near the garden after the bag drop", more:"casual sit-down lunch restaurants", inf:"perfect-for/lunch", ico:"🥪", order:["Starbucks Reserve Roastery", "Chelsea Market", "Tom's Restaurant", "The Vaux"]},
   {key:"sat-dinner",    name:"Saturday dinner",    where:"Brooklyn", more:"casual steak and American restaurants", inf:"perfect-for/dinner-with-the-parents", ico:"🍽️", order:["Gage & Tollner", "French Louie", "Colonia Verde", "Eyval"]},
   {key:"sun-lunch",     name:"Sunday lunch",       where:"near the Frick", more:"casual sit-down lunch restaurants", inf:"neighborhoods/upper-east-side", ico:"🥪"},
   {key:"sun-dinner",    name:"Sunday dinner",      where:"after SoHo", more:"casual steak and American restaurants", inf:"perfect-for/dinner-with-the-parents", ico:"🍽️"},
@@ -634,9 +639,13 @@ var EATS = [
    d:"A Brooklyn steak and chop house from 1879, restored to look the way it did then: mirrors, dark wood, brass lamps. Steaks, chops, fried chicken, oysters. A beautiful room and a very good steak. A short walk from your hotel."},
   {n:"Colonia Verde", k:"Wood-fired Latin American, Fort Greene", area:"Brooklyn", cui:"Latin American", meals:["fri-dinner", "sat-dinner"], q:"Colonia Verde 219 DeKalb Ave Brooklyn", w:"https://www.coloniaverdenyc.com/", r:"https://resy.com/cities/ny/colonia-verde",
    d:"A cozy neighborhood restaurant on my street. Steak and vegetables cooked over a wood fire, including a big ribeye to share, and a garden room in back. Relaxed and good for talking."},
-  {n:"Yellow Magnolia Café", k:"Garden café, inside the Botanic Garden", area:"Brooklyn", cui:"American", meals:["sat-lunch"], q:"Yellow Magnolia Café Brooklyn Botanic Garden",
-   d:"The plan for Saturday's lunch. A sit-down café inside the Botanic Garden, looking out on Magnolia Plaza. A short menu of salads, grain bowls and sandwiches. We eat, then walk straight into the garden."},
-  {n:"gertrude's", k:"Bistro brunch, Prospect Heights", area:"Brooklyn", cui:"American", meals:["sat-lunch"], q:"gertrude's 605 Carlton Ave Brooklyn",
+  {n:"Starbucks Reserve Roastery", k:"Coffee and bakery counter, Meatpacking", area:"Downtown Manhattan", cui:"Bakery and coffee", meals:["sat-lunch"], q:"Starbucks Reserve Roastery 61 9th Ave New York",
+   d:"The giant Starbucks where they roast the coffee in front of you. Every flavored drink you can think of, plus a bakery counter with pizza, sandwiches and pastries. The easy choice, since we are stopping here anyway."},
+  {n:"Chelsea Market", k:"Food hall, across from the Roastery", area:"Downtown Manhattan", cui:"Food hall", meals:["sat-lunch"], q:"Chelsea Market 75 9th Ave New York",
+   d:"A big indoor food hall in an old factory, across the street from the Roastery. Lots of counters, so everyone picks their own. Busy on Saturdays, and seats can be hard to find."},
+  {n:"Yellow Magnolia Café", k:"Garden café, inside the Botanic Garden", area:"Brooklyn", cui:"American", meals:[], q:"Yellow Magnolia Café Brooklyn Botanic Garden",
+   d:"A sit-down café inside the Botanic Garden, looking out on Magnolia Plaza. A short menu of salads, grain bowls and sandwiches. It closes at 3:30, so it only works for an early lunch."},
+  {n:"gertrude's", k:"Bistro brunch, Prospect Heights", area:"Brooklyn", cui:"American", meals:[], q:"gertrude's 605 Carlton Ave Brooklyn",
    d:"A neighborhood bistro a few blocks north of the park. Brunch until 3: a good burger, potato pancakes, French toast. About a 15 to 20 minute walk to the garden."},
   {n:"The Vaux", k:"American bistro, Prospect Heights", area:"Brooklyn", cui:"American", meals:["sat-lunch"], q:"The Vaux 570 Vanderbilt Ave Brooklyn",
    d:"A cozy bar and restaurant on Vanderbilt Avenue. Burgers, steak and eggs, shrimp and grits. About a 15 to 20 minute walk to the garden."},
