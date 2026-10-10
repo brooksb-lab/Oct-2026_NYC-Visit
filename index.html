@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Saturday, October 10 at 8:24 am";
+var UPDATED = "Updated Saturday, October 10 at 9:33 am";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -440,7 +440,8 @@ var CHANGES = [
   {at:"2026-10-09T18:07", text:"Friday dinner: four places on my street are now at the top of the list. Colonia Verde, Evelina, Walter's and Sailor."},
   {at:"2026-10-09T18:20", text:"The Tribeca restaurants are off the food list."},
   {at:"2026-10-09T20:58", text:"Saturday is new. The High Line in the morning, the Vessel at 11, lunch at the café inside the Brooklyn Botanic Garden, then the garden. Governors Island is off for now."},
-  {at:"2026-10-10T08:24", text:"Saturday starts at 9:30 now, so everything is about half an hour later. No sit-down breakfast: we grab something small at the hotel and save room for lunch at 1:10."}
+  {at:"2026-10-10T08:24", text:"Saturday starts at 9:30 now, so everything is about half an hour later. No sit-down breakfast: we grab something small at the hotel and save room for lunch at 1:10."},
+  {at:"2026-10-10T09:33", text:"We meet at the Starbucks by the hotel at 9:45 and leave at 10:00. The High Line is at 10:45, the Vessel at noon, lunch at 1:35 and the garden at 2:40."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -532,15 +533,15 @@ var EVENTS = [
   {d:"2026-10-09", s:"19:15", e:"20:45", t:"Dinner (TBD)", ico:"🎂", cal:"meal", tbd:"fri-dinner"},
   {d:"2026-10-09", s:"20:45", e:"21:45", t:"Car with bags from mine to the Ace, check-in", ico:"🛎️", cal:"between", mode:["car"], place:"ace", path:["home","ace"]},
 
-  {d:"2026-10-10", s:"09:15", e:"09:30", t:"Quick bite, grab and go", ico:"🥯", cal:"meal", place:"ace", note:"No sit-down breakfast today. Black Seed Bagels is in the hotel lobby. We save room for lunch."},
-  {d:"2026-10-10", s:"09:30", e:"10:15", t:"A or C train to the High Line: Hoyt-Schermerhorn to 14 St", ico:"🚇", cal:"between", mode:["transit"], to:"hlsouth", path:["ace","hlsouth"], note:"The station is next to the hotel. From 14 St it is an 8 minute walk to the High Line stairs."},
-  {d:"2026-10-10", s:"10:15", e:"11:30", t:"High Line, Gansevoort St north to Hudson Yards", ico:"🌿", cal:"fun", place:"hlsouth", note:"About 1.5 miles. Free, no tickets. It ends beside the Vessel."},
-  {d:"2026-10-10", s:"11:30", e:"12:10", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
+  {d:"2026-10-10", s:"09:45", e:"10:00", t:"Quick bite: Starbucks by the Ace", ico:"☕", cal:"meal", place:"ace", note:"No sit-down breakfast today. We meet at the Starbucks at Fulton St and Bond St, four minutes from the hotel, and save room for lunch."},
+  {d:"2026-10-10", s:"10:00", e:"10:45", t:"A or C train to the High Line: Hoyt-Schermerhorn to 14 St", ico:"🚇", cal:"between", mode:["transit"], to:"hlsouth", path:["ace","hlsouth"], note:"The station is next to the hotel. From 14 St it is an 8 minute walk to the High Line stairs."},
+  {d:"2026-10-10", s:"10:45", e:"12:00", t:"High Line, Gansevoort St north to Hudson Yards", ico:"🌿", cal:"fun", place:"hlsouth", note:"About 1.5 miles. Free, no tickets. It ends beside the Vessel."},
+  {d:"2026-10-10", s:"12:00", e:"12:35", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
    note:"Free to see from the plaza. Climbing takes a timed ticket, and it is mostly stairs."},
-  {d:"2026-10-10", s:"12:10", e:"13:10", t:"7 and Q trains to the Botanic Garden", ico:"🚇", cal:"between", mode:["transit"], to:"bbg", note:"The 7 one stop to Times Square, then the Q to Prospect Park. We go in at the Flatbush Avenue entrance, away from the parade."},
-  {d:"2026-10-10", s:"13:10", e:"14:15", t:"Lunch: Yellow Magnolia Café", ico:"🥪", cal:"meal", place:"bbg", opts:"sat-lunch", note:"Inside the garden, looking out on Magnolia Plaza. We buy garden tickets at the gate on the way in."},
-  {d:"2026-10-10", s:"14:15", e:"16:30", t:"Brooklyn Botanic Garden (Japanese Hill-and-Pond Garden first)", ico:"🌿", cal:"fun", place:"bbg", tix:"https://www.bbg.org/tickets", note:"Tickets are sold at the gate. No set entry time."},
-  {d:"2026-10-10", s:"16:30", e:"19:00", t:"Back to the Ace, rest", ico:"🛋️", cal:"fun", mode:["transit","car"], place:"ace", note:"The Q three stops to DeKalb Av, then a short walk."},
+  {d:"2026-10-10", s:"12:35", e:"13:35", t:"7 and Q trains to the Botanic Garden", ico:"🚇", cal:"between", mode:["transit"], to:"bbg", note:"The 7 one stop to Times Square, then the Q to Prospect Park. We go in at the Flatbush Avenue entrance, away from the parade."},
+  {d:"2026-10-10", s:"13:35", e:"14:40", t:"Lunch: Yellow Magnolia Café", ico:"🥪", cal:"meal", place:"bbg", opts:"sat-lunch", note:"Inside the garden, looking out on Magnolia Plaza. We buy garden tickets at the gate on the way in."},
+  {d:"2026-10-10", s:"14:40", e:"16:45", t:"Brooklyn Botanic Garden (Japanese Hill-and-Pond Garden first)", ico:"🌿", cal:"fun", place:"bbg", tix:"https://www.bbg.org/tickets", note:"Tickets are sold at the gate. No set entry time."},
+  {d:"2026-10-10", s:"16:45", e:"19:00", t:"Back to the Ace, rest", ico:"🛋️", cal:"fun", mode:["transit","car"], place:"ace", note:"The Q three stops to DeKalb Av, then a short walk."},
   {d:"2026-10-10", s:"19:00", e:"20:30", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sat-dinner"},
 
   {d:"2026-10-11", s:"08:00", e:"08:30", t:"A/C from Hoyt-Schermerhorn to Meatpacking", ico:"🚇", cal:"between", mode:["transit"], dest:"roast", place:"hoyt"},
