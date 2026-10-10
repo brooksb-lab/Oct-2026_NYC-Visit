@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Saturday, October 10 at 10:50 am";
+var UPDATED = "Updated Saturday, October 10 at 11:02 am";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -460,34 +460,36 @@ var DAYS = [
    mlat, mlon = map-only position for a pin that would sit on top of another one.
    way:true = a waypoint: the route line bends through it, but it never gets a pin. */
 var PLACES = {
-  lga:     {name:"LaGuardia Airport, Terminal B", addr:"East Elmhurst, NY 11371", lat:40.7745, lon:-73.8720, off:true},
+  lga:     {name:"LaGuardia Airport, Terminal B", addr:"East Elmhurst, NY 11371", q:"LaGuardia Airport Terminal B", lat:40.7745, lon:-73.8720, off:true},
   home:    {name:"My place", addr:"253 DeKalb Ave, Brooklyn, NY 11205", q:"253 DeKalb Ave, Brooklyn, NY 11205", lat:40.6896, lon:-73.9690, lab:"t", s:"My place"},
   noho:    {name:"NoHo", addr:"Manhattan, New York, NY", lat:40.7265, lon:-73.9927},
-  dekalbmkt: {name:"DeKalb Market Hall", addr:"445 Albee Square W, Brooklyn, NY 11201", lat:40.6909, lon:-73.9833, mlat:40.6938, mlon:-73.9833, lab:"l", s:"DeKalb Market"},
-  hlsouth: {name:"High Line, Gansevoort St entrance", addr:"Gansevoort St & Washington St, New York, NY 10014", lat:40.7396, lon:-74.0095, lab:"l", s:"High Line"},
-  vessel:  {name:"Vessel", addr:"20 Hudson Yards, New York, NY 10001", lat:40.7538, lon:-74.0022, lab:"l", s:"Vessel"},
-  highline:{name:"The High Line", addr:"W 30th St at 10th Ave, New York, NY 10001", lat:40.7480, lon:-74.0048, mlat:40.7455, mlon:-74.0062, lab:"l", s:"High Line"},
-  oculus:  {name:"Oculus", addr:"185 Greenwich St, New York, NY 10007", lat:40.7114, lon:-74.0113, mlat:40.7100, mlon:-74.0060, lab:"r", s:"Oculus"},
-  gansevoort:{name:"Gansevoort St, south end of the High Line", addr:"Gansevoort St at Washington St, New York, NY 10014", lat:40.7396, lon:-74.0095, way:true},
+  dekalbmkt: {name:"DeKalb Market Hall", addr:"445 Albee Square W, Brooklyn, NY 11201", pid:"ChIJYdQQqUxawokRgEb3GR9Qqhw", lat:40.6909, lon:-73.9833, mlat:40.6938, mlon:-73.9833, lab:"l", s:"DeKalb Market"},
+  hlsouth: {name:"High Line, Gansevoort St entrance", addr:"Gansevoort St & Washington St, New York, NY 10014", pid:"ChIJkaobPwBZwokRkbi8fBEOqvs", q:"High Line Entrance Gansevoort and Washington", lat:40.7396, lon:-74.0095, lab:"l", s:"High Line"},
+  vessel:  {name:"Vessel", addr:"20 Hudson Yards, New York, NY 10001", pid:"ChIJqygAFrRZwokRwF0VrBoXS0E", lat:40.7538, lon:-74.0022, lab:"l", s:"Vessel"},
+  highline:{name:"The High Line", addr:"W 30th St at 10th Ave, New York, NY 10001", pid:"ChIJ5bQPhMdZwokRkTwKhVxhP1g", q:"The High Line, New York", lat:40.7480, lon:-74.0048, mlat:40.7455, mlon:-74.0062, lab:"l", s:"High Line"},
+  oculus:  {name:"Oculus", addr:"185 Greenwich St, New York, NY 10007", pid:"ChIJ4f4VwT5bwokRwQ6hjfC-eTM", lat:40.7114, lon:-74.0113, mlat:40.7100, mlon:-74.0060, lab:"r", s:"Oculus"},
+  gansevoort:{name:"Gansevoort St, south end of the High Line", addr:"Gansevoort St at Washington St, New York, NY 10014", pid:"ChIJkaobPwBZwokRkbi8fBEOqvs", q:"High Line Entrance Gansevoort and Washington", lat:40.7396, lon:-74.0095, way:true},
   hrp:     {name:"Hudson River Park", addr:"West St at Canal St, New York, NY 10013", lat:40.7200, lon:-74.0128, way:true},
-  skechers:{name:"Skechers", addr:"134 W 34th St, New York, NY 10001", lat:40.7502, lon:-73.9895, lab:"r", s:"Skechers"},
-  macys:   {name:"Macy's Herald Square", addr:"151 W 34th St, New York, NY 10001", lat:40.7508, lon:-73.9895, lab:"r", s:"Macy's"},
-  levain:  {name:"Levain Bakery", addr:"340 Lafayette St, New York, NY 10012", lat:40.7262, lon:-73.9946, lab:"r", s:"Levain"},
+  sbux:    {name:"Starbucks", addr:"498 Fulton St, Brooklyn, NY 11201", pid:"ChIJP3kFsTBawokR1-hg5-XAscw", lat:40.6896, lon:-73.9829, way:true},
+  blackseed:{name:"Black Seed Bagels", addr:"252 Schermerhorn St, Brooklyn, NY 11217", pid:"ChIJsaMxckVbwokRu4-cQh9amfI", lat:40.6878, lon:-73.9837, way:true},
+  skechers:{name:"Skechers", addr:"134 W 34th St, New York, NY 10001", pid:"ChIJ7bTkr65ZwokRS4MLZT54ob0", lat:40.7502, lon:-73.9895, lab:"r", s:"Skechers"},
+  macys:   {name:"Macy's Herald Square", addr:"151 W 34th St, New York, NY 10001", pid:"ChIJ3xjWra5ZwokRrwJ0KZ4yKNs", lat:40.7508, lon:-73.9895, lab:"r", s:"Macy's"},
+  levain:  {name:"Levain Bakery", addr:"340 Lafayette St, New York, NY 10012", pid:"ChIJdXpUxMtZwokRq904Bbqnuw0", lat:40.7262, lon:-73.9946, lab:"r", s:"Levain"},
   soho:    {name:"SoHo", addr:"Manhattan, New York, NY", lat:40.7233, lon:-74.0030, lab:"l", s:"SoHo"},
-  wtc:     {name:"One World Trade Center", addr:"285 Fulton St, New York, NY 10007", lat:40.7130, lon:-74.0132, lab:"l", s:"One World Trade"},
-  ace:     {name:"Ace Hotel Brooklyn", addr:"252 Schermerhorn St, Brooklyn, NY 11201", lat:40.6876, lon:-73.9838, lab:"b", s:"Ace Hotel"},
-  pier6:   {name:"Brooklyn Bridge Park Pier 6 ferry", addr:"Pier 6, Brooklyn, NY 11201", lat:40.6925, lon:-74.0012, lab:"t", s:"Pier 6 ferry"},
-  fortjay: {name:"Fort Jay", addr:"214 Andes Rd, New York, NY 10004", lat:40.6905, lon:-74.0160, lab:"tr", s:"Fort Jay"},
-  castle:  {name:"Castle Williams", addr:"Governors Island, New York, NY 10004", lat:40.6927, lon:-74.0195, lab:"l", s:"Castle Williams"},
-  outlook: {name:"Outlook Hill", addr:"Governors Island, New York, NY 10004", lat:40.6838, lon:-74.0232, lab:"l", s:"Outlook Hill"},
-  yankee:  {name:"Yankee Pier", addr:"Governors Island, New York, NY 10004", lat:40.6878, lon:-74.0128, lab:"r", s:"Yankee Pier"},
-  bbg:     {name:"Brooklyn Botanic Garden", addr:"455 Flatbush Ave, Brooklyn, NY 11225", lat:40.6694, lon:-73.9624, lab:"l", s:"Botanic Garden"},
-  hoyt:    {name:"Hoyt-Schermerhorn Sts station", addr:"Schermerhorn St, Brooklyn, NY 11201", lat:40.6886, lon:-73.9851, lab:"r", s:"Hoyt-Schermerhorn"},
-  roast:   {name:"Starbucks Reserve Roastery", addr:"61 9th Ave, New York, NY 10011", lat:40.7416, lon:-74.0051, lab:"r", s:"Roastery"},
-  chelsea: {name:"Chelsea Market", addr:"75 9th Ave, New York, NY 10011", lat:40.7424, lon:-74.0061, mlat:40.7475, mlon:-74.0010, lab:"r", s:"Chelsea Market"},
-  little:  {name:"Little Island", addr:"Pier 55 at W 13th St, New York, NY 10014", lat:40.7420, lon:-74.0118, lab:"l", s:"Little Island"},
-  frick:   {name:"The Frick Collection", addr:"1 E 70th St, New York, NY 10021", lat:40.7712, lon:-73.9673, lab:"l", s:"The Frick"},
-  hunter:  {name:"68 St-Hunter College station", addr:"Lexington Ave at E 68th St, New York, NY 10065", lat:40.7672, lon:-73.9618, lab:"b", s:"68 St station"},
+  wtc:     {name:"One World Trade Center", addr:"285 Fulton St, New York, NY 10007", pid:"ChIJy7cGfBlawokR5l2e93hsoEA", lat:40.7130, lon:-74.0132, lab:"l", s:"One World Trade"},
+  ace:     {name:"Ace Hotel Brooklyn", addr:"252 Schermerhorn St, Brooklyn, NY 11201", pid:"ChIJp-gHME1awokRD04lzhd8DQU", lat:40.6876, lon:-73.9838, lab:"b", s:"Ace Hotel"},
+  pier6:   {name:"Brooklyn Bridge Park Pier 6 ferry", addr:"Pier 6, Brooklyn, NY 11201", pid:"ChIJsd9dvkNawokRI7WmdelKZgc", q:"Brooklyn Bridge Park Pier 6 ferry", lat:40.6925, lon:-74.0012, lab:"t", s:"Pier 6 ferry"},
+  fortjay: {name:"Fort Jay", addr:"214 Andes Rd, New York, NY 10004", pid:"ChIJfa9tmm9awokRLTlL6sTX5B0", q:"Fort Jay, Governors Island", lat:40.6905, lon:-74.0160, lab:"tr", s:"Fort Jay"},
+  castle:  {name:"Castle Williams", addr:"Governors Island, New York, NY 10004", pid:"ChIJvY6AOnBawokRtgGd-0ZLAfM", lat:40.6927, lon:-74.0195, lab:"l", s:"Castle Williams"},
+  outlook: {name:"Outlook Hill", addr:"Governors Island, New York, NY 10004", pid:"ChIJu5ePs35awokRcu64QN2RFMc", q:"Outlook Hill, Governors Island", lat:40.6838, lon:-74.0232, lab:"l", s:"Outlook Hill"},
+  yankee:  {name:"Yankee Pier", addr:"Governors Island, New York, NY 10004", pid:"ChIJZ5AVTABbwokRyz5JE3ZwJ78", q:"Yankee Pier, Governors Island", lat:40.6878, lon:-74.0128, lab:"r", s:"Yankee Pier"},
+  bbg:     {name:"Brooklyn Botanic Garden", addr:"455 Flatbush Ave, Brooklyn, NY 11225", pid:"ChIJwYu_aA5bwokR2lxjW-QvQlc", q:"Brooklyn Botanic Garden", dq:"455 Flatbush Ave, Brooklyn, NY 11225", lat:40.6694, lon:-73.9624, lab:"l", s:"Botanic Garden"},
+  hoyt:    {name:"Hoyt-Schermerhorn Sts station", addr:"Schermerhorn St, Brooklyn, NY 11201", pid:"ChIJIwtUHE1awokRTAqZATg9BEs", q:"Hoyt-Schermerhorn Sts subway station, Brooklyn", lat:40.6886, lon:-73.9851, lab:"r", s:"Hoyt-Schermerhorn"},
+  roast:   {name:"Starbucks Reserve Roastery", addr:"61 9th Ave, New York, NY 10011", pid:"ChIJIQDZbb9ZwokRNRez4RviXGQ", lat:40.7416, lon:-74.0051, lab:"r", s:"Roastery"},
+  chelsea: {name:"Chelsea Market", addr:"75 9th Ave, New York, NY 10011", pid:"ChIJw2lMFL9ZwokRosAtly52YX4", lat:40.7424, lon:-74.0061, mlat:40.7475, mlon:-74.0010, lab:"r", s:"Chelsea Market"},
+  little:  {name:"Little Island", addr:"Pier 55 at W 13th St, New York, NY 10014", pid:"ChIJL-CJmTFZwokRsPcqje_bn7w", q:"Little Island, New York", lat:40.7420, lon:-74.0118, lab:"l", s:"Little Island"},
+  frick:   {name:"The Frick Collection", addr:"1 E 70th St, New York, NY 10021", pid:"ChIJHRH97uxYwokR6CBeDyn1jtg", lat:40.7712, lon:-73.9673, lab:"l", s:"The Frick"},
+  hunter:  {name:"68 St-Hunter College station", addr:"Lexington Ave at E 68th St, New York, NY 10065", pid:"ChIJ_Xr5wetYwokRd1jnf92jyUc", q:"68 St-Hunter College subway station, New York", lat:40.7672, lon:-73.9618, lab:"b", s:"68 St station"},
   bridge:  {name:"Brooklyn Bridge walkway", addr:"Tillary St at Brooklyn Bridge Blvd, Brooklyn, NY 11201", lat:40.7003, lon:-73.9908, lab:"l", s:"Brooklyn Bridge"}
 };
 
@@ -536,8 +538,8 @@ var EVENTS = [
   {d:"2026-10-09", s:"19:15", e:"20:45", t:"Dinner (TBD)", ico:"🎂", cal:"meal", tbd:"fri-dinner"},
   {d:"2026-10-09", s:"20:45", e:"21:45", t:"Car with bags from mine to the Ace, check-in", ico:"🛎️", cal:"between", mode:["car"], place:"ace", path:["home","ace"]},
 
-  {d:"2026-10-10", s:"09:45", e:"10:20", t:"Coffee: Starbucks by the Ace", ico:"☕", cal:"meal", place:"ace", note:"The Starbucks at Fulton St and Bond St, four minutes from the hotel."},
-  {d:"2026-10-10", s:"10:20", e:"11:05", t:"Breakfast: Black Seed Bagels", ico:"🥯", cal:"meal", place:"ace", note:"A quick breakfast in the hotel lobby. Then the computer bags go up to the room."},
+  {d:"2026-10-10", s:"09:45", e:"10:20", t:"Coffee: Starbucks by the Ace", ico:"☕", cal:"meal", place:"sbux", path:["ace","sbux"], note:"The Starbucks at Fulton St and Bond St, four minutes from the hotel."},
+  {d:"2026-10-10", s:"10:20", e:"11:05", t:"Breakfast: Black Seed Bagels", ico:"🥯", cal:"meal", place:"blackseed", note:"A quick breakfast in the hotel lobby. Then the computer bags go up to the room."},
   {d:"2026-10-10", s:"11:05", e:"11:35", t:"A or C train to 34th St", ico:"🚇", cal:"between", mode:["transit"], to:"skechers", path:["ace","skechers"], note:"From Hoyt-Schermerhorn, next to the hotel, to 34 St-Penn Station. Then a short walk east on 34th St."},
   {d:"2026-10-10", s:"11:35", e:"12:15", t:"Skechers, 34th St", ico:"👟", cal:"fun", place:"skechers"},
   {d:"2026-10-10", s:"12:15", e:"12:35", t:"Walk 34th St west to the Vessel", ico:"🚶", cal:"between", mode:["walk"], to:"vessel", note:"Straight west on 34th St. About 15 minutes."},
@@ -607,19 +609,19 @@ var CUISINES = ["Steak", "Italian", "French", "American", "Mediterranean and Per
    lat, lon (and mlat, mlon, lab, s as in PLACES) = put it on the drawn map as a small hollow dot on any day whose
    unpicked meal lists it; leave them off and it simply does not show on the map, d = description shown when tapped, p = optional photo path published with the page. */
 var EATS = [
-  {n:"DeKalb Market Hall", k:"Food hall, Downtown Brooklyn", area:"Brooklyn", cui:"Food hall", meals:["fri-lunch"], q:"DeKalb Market Hall 445 Albee Square West Brooklyn", w:"http://dekalbmarkethall.com/",
+  {n:"DeKalb Market Hall", pid:"ChIJYdQQqUxawokRgEb3GR9Qqhw", k:"Food hall, Downtown Brooklyn", area:"Brooklyn", cui:"Food hall", meals:["fri-lunch"], q:"DeKalb Market Hall 445 Albee Square West Brooklyn", w:"http://dekalbmarkethall.com/",
    d:"Where we had Friday's lunch. A big food hall with about 40 counters, so everyone picks their own: sandwiches, pizza, barbecue, noodles, salads. Lots of seats, no waiting for a table."},
-  {n:"Sailor", k:"American bistro, Fort Greene", area:"Brooklyn", cui:"American", meals:["fri-dinner"], q:"Sailor 228 DeKalb Ave Brooklyn", w:"https://www.sailor.nyc/", r:"https://www.sailor.nyc/reserve/",
+  {n:"Sailor", pid:"ChIJ2xcAfQFbwokRSBBCp0svARQ", k:"American bistro, Fort Greene", area:"Brooklyn", cui:"American", meals:["fri-dinner"], q:"Sailor 228 DeKalb Ave Brooklyn", w:"https://www.sailor.nyc/", r:"https://www.sailor.nyc/reserve/",
    d:"A handsome little bistro half a block from my place, from a well-known chef. A very good burger, salads and simple dishes done well. A lovely room, and a little pricier."},
-  {n:"Evelina", k:"Italian, Fort Greene", area:"Brooklyn", cui:"Italian", meals:["fri-dinner"], q:"Evelina 211 DeKalb Ave Brooklyn", w:"http://www.evelinabk.com/", r:"https://resy.com/cities/ny/evelina",
+  {n:"Evelina", pid:"ChIJzae3_LlbwokR6ts6PCZ3agM", k:"Italian, Fort Greene", area:"Brooklyn", cui:"Italian", meals:["fri-dinner"], q:"Evelina 211 DeKalb Ave Brooklyn", w:"http://www.evelinabk.com/", r:"https://resy.com/cities/ny/evelina",
    d:"A pretty Italian spot a block from my place. Fresh pasta and salads, eggs at lunch, and a strip steak at dinner. Lunch runs until 3:30 and dinner starts at 5."},
-  {n:"Walter's", k:"American, Fort Greene", area:"Brooklyn", cui:"American", meals:["fri-dinner"], q:"Walter's 166 DeKalb Ave Brooklyn", w:"http://waltersbrooklyn.com/", r:"https://waltersbrooklyn.com/",
+  {n:"Walter's", pid:"ChIJ8ccnM7dbwokRy-pTMsdgvS4", k:"American, Fort Greene", area:"Brooklyn", cui:"American", meals:["fri-dinner"], q:"Walter's 166 DeKalb Ave Brooklyn", w:"http://waltersbrooklyn.com/", r:"https://waltersbrooklyn.com/",
    d:"A neighborhood favorite across from Fort Greene Park, a five minute walk from my place. Steak and fries, a good burger, salads. Easy and comfortable."},
-  {n:"Junior's", k:"Diner and cheesecake, Downtown Brooklyn", area:"Brooklyn", cui:"American", meals:["mon-breakfast"], q:"Junior's Restaurant 386 Flatbush Ave Ext Brooklyn", lat:40.6902, lon:-73.9819, mlat:40.6912, mlon:-73.9836, lab:"t", w:"http://www.juniorscheesecake.com/",
+  {n:"Junior's", pid:"ChIJKSnzQJVewokRme40boVi4uk", k:"Diner and cheesecake, Downtown Brooklyn", area:"Brooklyn", cui:"American", meals:["mon-breakfast"], q:"Junior's Restaurant 386 Flatbush Ave Ext Brooklyn", lat:40.6902, lon:-73.9819, mlat:40.6912, mlon:-73.9836, lab:"t", w:"http://www.juniorscheesecake.com/",
    d:"A Brooklyn diner since 1950, five minutes on foot from your hotel. Eggs, pancakes, big sandwiches, and the most famous cheesecake in New York. Casual and quick."},
-  {n:"Black Seed Bagels", k:"Bagels and egg sandwiches, in your hotel", area:"Brooklyn", cui:"Bakery and coffee", meals:["mon-breakfast"], q:"Black Seed Bagels 252 Schermerhorn St Brooklyn", lat:40.6876, lon:-73.9838, mlat:40.6866, mlon:-73.9806, lab:"r", s:"Black Seed", w:"https://www.blackseedbagels.com/",
+  {n:"Black Seed Bagels", pid:"ChIJsaMxckVbwokRu4-cQh9amfI", k:"Bagels and egg sandwiches, in your hotel", area:"Brooklyn", cui:"Bakery and coffee", meals:["mon-breakfast"], q:"Black Seed Bagels 252 Schermerhorn St Brooklyn", lat:40.6876, lon:-73.9838, mlat:40.6866, mlon:-73.9806, lab:"r", s:"Black Seed", w:"https://www.blackseedbagels.com/",
    d:"A bagel shop on the ground floor of your hotel, right beside the front door. Fresh bagels, bacon, egg and cheese sandwiches, coffee. You order at the counter. Only a few seats, so it is the fastest choice."},
-  {n:"The Little Sweet Café", k:"Crêpes and coffee, Boerum Hill", area:"Brooklyn", cui:"Bakery and coffee", meals:["mon-breakfast"], q:"The Little Sweet Café 77 Hoyt St Brooklyn", lat:40.6876, lon:-73.9861, mlat:40.6878, mlon:-73.9874, lab:"l", s:"Little Sweet Café",
+  {n:"The Little Sweet Café", pid:"ChIJT8BMpU1awokRbkrdxXdBcX4", k:"Crêpes and coffee, Boerum Hill", area:"Brooklyn", cui:"Bakery and coffee", meals:["mon-breakfast"], q:"The Little Sweet Café 77 Hoyt St Brooklyn", lat:40.6876, lon:-73.9861, mlat:40.6878, mlon:-73.9874, lab:"l", s:"Little Sweet Café",
    d:"A tiny, pretty café four minutes on foot from your hotel. Sweet and savory crêpes, egg dishes, and flavored lattes. Very small, so we may have to wait for a table."},
   {n:"L'Appartement 4F", k:"French bakery, Brooklyn Heights", area:"Brooklyn", cui:"Bakery and coffee", meals:["mon-breakfast"], q:"L'Appartement 4F 115 Montague St Brooklyn", lat:40.6952, lon:-73.9951, lab:"l", w:"https://www.lappartement4f.com/",
    d:"A small French bakery known for some of the best croissants in New York, plus cinnamon rolls and vanilla lattes. It is on a pretty street in Brooklyn Heights, a 15 minute walk from your hotel. It opens at 8:00 and there may be a short line."},
@@ -635,27 +637,27 @@ var EATS = [
    d:"Fresh, bright Mediterranean food made for sharing: warm bread with hummus, grilled fish, chicken, salads. Healthy and easy to like. A five minute walk from the Frick."},
   {n:"Central Park Boathouse", k:"American, in Central Park", area:"Uptown", cui:"American", meals:["sun-lunch"], w:"https://centralparkboathouse.com/", r:"https://www.opentable.com/r/central-park-boathouse-new-york-2",
    d:"Lunch right on the lake in Central Park, with rowboats going past. Simple American food: crab cakes, salads, fish, steak. You come for the setting. A ten minute walk into the park from the Frick."},
-  {n:"Gage & Tollner", k:"Steaks and chops, Downtown Brooklyn", area:"Brooklyn", cui:"Steak", meals:["sat-dinner"], q:"Gage & Tollner 372 Fulton St Brooklyn", w:"https://www.gageandtollner.com/", r:"https://www.gageandtollner.com/",
+  {n:"Gage & Tollner", pid:"ChIJwZz-LWlbwokR_hshOuzdrkw", k:"Steaks and chops, Downtown Brooklyn", area:"Brooklyn", cui:"Steak", meals:["sat-dinner"], q:"Gage & Tollner 372 Fulton St Brooklyn", w:"https://www.gageandtollner.com/", r:"https://www.gageandtollner.com/",
    d:"A Brooklyn steak and chop house from 1879, restored to look the way it did then: mirrors, dark wood, brass lamps. Steaks, chops, fried chicken, oysters. A beautiful room and a very good steak. A short walk from your hotel."},
-  {n:"Colonia Verde", k:"Wood-fired Latin American, Fort Greene", area:"Brooklyn", cui:"Latin American", meals:["fri-dinner", "sat-dinner"], q:"Colonia Verde 219 DeKalb Ave Brooklyn", w:"https://www.coloniaverdenyc.com/", r:"https://resy.com/cities/ny/colonia-verde",
+  {n:"Colonia Verde", pid:"ChIJrXze-rlbwokRl3G4x1txJgk", k:"Wood-fired Latin American, Fort Greene", area:"Brooklyn", cui:"Latin American", meals:["fri-dinner", "sat-dinner"], q:"Colonia Verde 219 DeKalb Ave Brooklyn", w:"https://www.coloniaverdenyc.com/", r:"https://resy.com/cities/ny/colonia-verde",
    d:"A cozy neighborhood restaurant on my street. Steak and vegetables cooked over a wood fire, including a big ribeye to share, and a garden room in back. Relaxed and good for talking."},
-  {n:"Starbucks Reserve Roastery", k:"Coffee and bakery counter, Meatpacking", area:"Downtown Manhattan", cui:"Bakery and coffee", meals:["sat-lunch"], q:"Starbucks Reserve Roastery 61 9th Ave New York",
+  {n:"Starbucks Reserve Roastery", pid:"ChIJIQDZbb9ZwokRNRez4RviXGQ", k:"Coffee and bakery counter, Meatpacking", area:"Downtown Manhattan", cui:"Bakery and coffee", meals:["sat-lunch"], q:"Starbucks Reserve Roastery 61 9th Ave New York",
    d:"The giant Starbucks where they roast the coffee in front of you. Every flavored drink you can think of, plus a bakery counter with pizza, sandwiches and pastries. The easy choice, since we are stopping here anyway."},
-  {n:"Chelsea Market", k:"Food hall, across from the Roastery", area:"Downtown Manhattan", cui:"Food hall", meals:["sat-lunch"], q:"Chelsea Market 75 9th Ave New York",
+  {n:"Chelsea Market", pid:"ChIJw2lMFL9ZwokRosAtly52YX4", k:"Food hall, across from the Roastery", area:"Downtown Manhattan", cui:"Food hall", meals:["sat-lunch"], q:"Chelsea Market 75 9th Ave New York",
    d:"A big indoor food hall in an old factory, across the street from the Roastery. Lots of counters, so everyone picks their own. Busy on Saturdays, and seats can be hard to find."},
-  {n:"Yellow Magnolia Café", k:"Garden café, inside the Botanic Garden", area:"Brooklyn", cui:"American", meals:[], q:"Yellow Magnolia Café Brooklyn Botanic Garden",
+  {n:"Yellow Magnolia Café", pid:"ChIJI99c-QxbwokRJwAkeGKmt0E", k:"Garden café, inside the Botanic Garden", area:"Brooklyn", cui:"American", meals:[], q:"Yellow Magnolia Café Brooklyn Botanic Garden",
    d:"A sit-down café inside the Botanic Garden, looking out on Magnolia Plaza. A short menu of salads, grain bowls and sandwiches. It closes at 3:30, so it only works for an early lunch."},
-  {n:"gertrude's", k:"Bistro brunch, Prospect Heights", area:"Brooklyn", cui:"American", meals:[], q:"gertrude's 605 Carlton Ave Brooklyn",
+  {n:"gertrude's", pid:"ChIJnRyRtUBbwokR4veV9Er_PAU", k:"Bistro brunch, Prospect Heights", area:"Brooklyn", cui:"American", meals:[], q:"gertrude's 605 Carlton Ave Brooklyn",
    d:"A neighborhood bistro a few blocks north of the park. Brunch until 3: a good burger, potato pancakes, French toast. About a 15 to 20 minute walk to the garden."},
-  {n:"The Vaux", k:"American bistro, Prospect Heights", area:"Brooklyn", cui:"American", meals:["sat-lunch"], q:"The Vaux 570 Vanderbilt Ave Brooklyn",
+  {n:"The Vaux", pid:"ChIJ45c7LgBbwokR6GskZ46FOnU", k:"American bistro, Prospect Heights", area:"Brooklyn", cui:"American", meals:["sat-lunch"], q:"The Vaux 570 Vanderbilt Ave Brooklyn",
    d:"A cozy bar and restaurant on Vanderbilt Avenue. Burgers, steak and eggs, shrimp and grits. About a 15 to 20 minute walk to the garden."},
-  {n:"Tom's Restaurant", k:"Classic diner, Prospect Heights", area:"Brooklyn", cui:"American", meals:["sat-lunch"], q:"Tom's Restaurant 782 Washington Ave Brooklyn",
+  {n:"Tom's Restaurant", pid:"ChIJkQjM7KBbwokRwC8M-XGNpsk", k:"Classic diner, Prospect Heights", area:"Brooklyn", cui:"American", meals:["sat-lunch"], q:"Tom's Restaurant 782 Washington Ave Brooklyn",
    d:"A Brooklyn diner from 1936, a few blocks from the garden. Pancakes, omelets, egg creams. Fast and friendly, but there is often a line on weekends and the parade is close by."},
   {n:"Time Out Market", k:"Food hall, DUMBO", area:"Brooklyn", cui:"Food hall", meals:[], q:"Time Out Market New York 55 Water St Brooklyn", w:"https://www.timeoutmarket.com/newyork/",
    d:"A food hall on the Brooklyn waterfront. Lots of counters, so everyone gets what they want. Take it up to the roof for a view of both bridges."},
   {n:"Eyval", k:"Persian, Bushwick", area:"Brooklyn", cui:"Mediterranean and Persian", meals:["sat-dinner"], w:"http://www.eyvalnyc.com/",
    d:"Persian food, which is milder than it sounds: fresh-baked bread, dips, grilled kebabs, crispy rice. The most adventurous place on this list. Dinner only, and a car ride from the hotel."},
-  {n:"French Louie", k:"American bistro, Boerum Hill", area:"Brooklyn", cui:"French", meals:["fri-dinner", "sat-dinner"], q:"French Louie 320 Atlantic Ave Brooklyn", w:"https://www.frenchlouienyc.com/", r:"https://www.opentable.com/r/french-louie-brooklyn",
+  {n:"French Louie", pid:"ChIJgRjO3E1awokRoC9SdsHbe-w", k:"American bistro, Boerum Hill", area:"Brooklyn", cui:"French", meals:["fri-dinner", "sat-dinner"], q:"French Louie 320 Atlantic Ave Brooklyn", w:"https://www.frenchlouienyc.com/", r:"https://www.opentable.com/r/french-louie-brooklyn",
    d:"A relaxed neighborhood bistro with a garden, a short walk from your hotel. The dry-aged steak comes with fries and a house steak sauce. Calm, comfortable, easy to talk."},
   {n:"Fraunces Tavern", k:"Historic tavern, Financial District", area:"Downtown Manhattan", cui:"American", meals:["fri-dinner"], q:"Fraunces Tavern 54 Pearl St New York", w:"http://www.frauncestavern.com/", r:"https://frauncestavern.com/-reserve",
    d:"A tavern from 1762. George Washington said goodbye to his officers here, and there is a small museum upstairs. Pub food: steak, fish and chips, pot pie. You go for the building and the history. A 15 minute walk from my office."},
@@ -684,15 +686,18 @@ function fmt(hmStr){
 }
 function clock(hmStr){ var f = fmt(hmStr); return f.t + " " + f.ap; }
 function q(p){ return encodeURIComponent(p.q || (p.name + ", " + p.addr)); }
-function gmaps(p){ return "https://www.google.com/maps/search/?api=1&query=" + q(p); }
+/* pid = Google place id: the link then opens that exact place, and the query text is only the fallback.
+   dq = where directions and Uber should aim when that is not the place itself (an entrance, say). */
+function gmaps(p){ return "https://www.google.com/maps/search/?api=1&query=" + q(p) + (p.pid ? "&query_place_id=" + p.pid : ""); }
+function dq(p){ return p.dq ? encodeURIComponent(p.dq) : q(p); }
 function uber(p){
   return "https://m.uber.com/ul/?action=setPickup&pickup=my_location" +
-    "&dropoff%5Bformatted_address%5D=" + q(p) +
+    "&dropoff%5Bformatted_address%5D=" + dq(p) +
     "&dropoff%5Blatitude%5D=" + p.lat + "&dropoff%5Blongitude%5D=" + p.lon;
 }
 /* directions in Google Maps from where you are now (no origin given), in one way of travelling */
 var MODES = {walk:["walking", "Walk"], transit:["transit", "Subway"], car:["driving", "Drive"]};
-function dirs(p, mode){ return "https://www.google.com/maps/dir/?api=1&destination=" + q(p) + "&travelmode=" + MODES[mode][0]; }
+function dirs(p, mode){ return "https://www.google.com/maps/dir/?api=1&destination=" + dq(p) + (p.pid && !p.dq ? "&destination_place_id=" + p.pid : "") + "&travelmode=" + MODES[mode][0]; }
 /* modes = the leg's ways of travelling: the Google Maps link is then directions, one link per mode */
 function linkRow(p, extra, modes){
   var kids = [];
@@ -884,7 +889,7 @@ function stopLi(e){
   var time = el("div", {"class":"time"}, [el("span", {"class":"tt", text:f.t}), el("small", {text:f.ap})]);
   var what = el("div", {"class":"what"}, [el("p", {"class":"t"}, [evIco(e) ? el("span", {"class":"ti", "aria-hidden":"true", text:evIco(e)}) : null, document.createTextNode(evTitle(e))])]);
   var modes = e.mode ? [].concat(e.mode) : null, target = e.dest ? PLACES[e.dest] : null;
-  if (p) what.appendChild(goMenu(p, p.name + ", " + p.addr, p.off ? null : mapLink(e.d, pk), modes, target));
+  if (p) what.appendChild(goMenu(p, p.name + ", " + p.addr, p.off || p.way ? null : mapLink(e.d, pk), modes, target));
   if (dest) what.appendChild(goMenu(dest, "To " + dest.name, null, modes, target));
   if (e.tix){
     var tl = el("a", {href:e.tix, target:"_blank", rel:"noopener", text:e.tixLabel || "Tickets"}), lk = what.querySelector("details.go .links");
@@ -1225,7 +1230,7 @@ function unfoldFor(node){
   if (g) setFold(g, false);
 }
 function eatRow(it){
-  var href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(it.q || (it.n + " New York"));
+  var href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(it.q || (it.n + " New York")) + (it.pid ? "&query_place_id=" + it.pid : "");
   /* tap the row to open the photo, description and links; tap again to close. The star marks a pick. */
   var more = el("div", {"class":"more", hidden:""}, [
     it.p ? el("img", {src:it.p, alt:it.n, loading:"lazy"}) : null,
@@ -1440,7 +1445,7 @@ function render(date, opt){
     optMeals.push({e:e, n:its.length});
     its.forEach(function(it){
       optMarks.push({x:PX(it), y:PY(it), lab:it.lab || "r", name:it.s || it.n, full:it.n,
-        href:"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(it.q || (it.n + " New York"))});
+        href:"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(it.q || (it.n + " New York")) + (it.pid ? "&query_place_id=" + it.pid : "")});
     });
   });
 
