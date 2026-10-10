@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Saturday, October 10 at 11:20 am";
+var UPDATED = "Updated Saturday, October 10 at 11:24 am";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -445,7 +445,8 @@ var CHANGES = [
   {at:"2026-10-10T10:16", text:"Breakfast at Black Seed Bagels in the hotel first, then we go. The train is at 10:50, the High Line at 11:35, the Vessel at 12:40, lunch at 2:10 and the garden at 3:10."},
   {at:"2026-10-10T10:50", text:"New order for today. Skechers on 34th St first, then the Vessel, then the High Line heading south to the Starbucks Roastery for coffee and lunch around 2:00. After that we drop bags at the hotel and go to the Botanic Garden at about 4:00."},
   {at:"2026-10-10T11:08", text:"The Botanic Garden is off for today. The afternoon is city time instead, and we are picking what."},
-  {at:"2026-10-10T11:20", text:"No trip back to the hotel in the middle of the day. We stay in the city after lunch and come back before dinner."}
+  {at:"2026-10-10T11:20", text:"No trip back to the hotel in the middle of the day. We stay in the city after lunch and come back before dinner."},
+  {at:"2026-10-10T11:24", text:"We leave the hotel about 11:35, so today runs half an hour later: Skechers at 12:05, the Vessel at 1:05, the High Line at 1:25 and lunch by the Roastery at 2:30."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -541,15 +542,15 @@ var EVENTS = [
   {d:"2026-10-09", s:"20:45", e:"21:45", t:"Car with bags from mine to the Ace, check-in", ico:"🛎️", cal:"between", mode:["car"], place:"ace", path:["home","ace"]},
 
   {d:"2026-10-10", s:"09:45", e:"10:20", t:"Coffee: Starbucks by the Ace", ico:"☕", cal:"meal", place:"sbux", path:["ace","sbux"], note:"The Starbucks at Fulton St and Bond St, four minutes from the hotel."},
-  {d:"2026-10-10", s:"10:20", e:"11:05", t:"Breakfast: Black Seed Bagels", ico:"🥯", cal:"meal", place:"blackseed", note:"A quick breakfast in the hotel lobby. Then the computer bags go up to the room."},
-  {d:"2026-10-10", s:"11:05", e:"11:35", t:"A or C train to 34th St", ico:"🚇", cal:"between", mode:["transit"], to:"skechers", path:["ace","skechers"], note:"From Hoyt-Schermerhorn, next to the hotel, to 34 St-Penn Station. Then a short walk east on 34th St."},
-  {d:"2026-10-10", s:"11:35", e:"12:15", t:"Skechers, 34th St", ico:"👟", cal:"fun", place:"skechers"},
-  {d:"2026-10-10", s:"12:15", e:"12:35", t:"Walk 34th St west to the Vessel", ico:"🚶", cal:"between", mode:["walk"], to:"vessel", note:"Straight west on 34th St. About 15 minutes."},
-  {d:"2026-10-10", s:"12:35", e:"12:55", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
+  {d:"2026-10-10", s:"10:20", e:"11:35", t:"Breakfast: Black Seed Bagels", ico:"🥯", cal:"meal", place:"blackseed", note:"A quick breakfast in the hotel lobby. Then the computer bags go up to the room."},
+  {d:"2026-10-10", s:"11:35", e:"12:05", t:"A or C train to 34th St", ico:"🚇", cal:"between", mode:["transit"], to:"skechers", path:["ace","skechers"], note:"From Hoyt-Schermerhorn, next to the hotel, to 34 St-Penn Station. Then a short walk east on 34th St."},
+  {d:"2026-10-10", s:"12:05", e:"12:45", t:"Skechers, 34th St", ico:"👟", cal:"fun", place:"skechers"},
+  {d:"2026-10-10", s:"12:45", e:"13:05", t:"Walk 34th St west to the Vessel", ico:"🚶", cal:"between", mode:["walk"], to:"vessel", note:"Straight west on 34th St. About 15 minutes."},
+  {d:"2026-10-10", s:"13:05", e:"13:25", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
    note:"Free to see from the plaza. Climbing takes a timed ticket, and it is mostly stairs."},
-  {d:"2026-10-10", s:"12:55", e:"14:00", t:"High Line, Hudson Yards south to 14th St", ico:"🌿", cal:"fun", place:"highline", note:"About 1.3 miles. Free, no tickets. We come off at 14th St, a block from the Roastery."},
-  {d:"2026-10-10", s:"14:00", e:"15:00", t:"Starbucks Reserve Roastery and lunch", ico:"☕", cal:"meal", place:"roast", opts:"sat-lunch", note:"Coffee first. Lunch is at the bakery counter here, or across the street at Chelsea Market."},
-  {d:"2026-10-10", s:"15:00", e:"17:45", t:"Afternoon in the city (not picked yet)", ico:"🏙️", cal:"fun", note:"The Botanic Garden is off. We are choosing between Little Island and the West Village, Grand Central and the Public Library, or the Staten Island Ferry."},
+  {d:"2026-10-10", s:"13:25", e:"14:30", t:"High Line, Hudson Yards south to 14th St", ico:"🌿", cal:"fun", place:"highline", note:"About 1.3 miles. Free, no tickets. We come off at 14th St, a block from the Roastery."},
+  {d:"2026-10-10", s:"14:30", e:"15:30", t:"Starbucks Reserve Roastery and lunch", ico:"☕", cal:"meal", place:"roast", opts:"sat-lunch", note:"Coffee first. Lunch is at the bakery counter here, or across the street at Chelsea Market."},
+  {d:"2026-10-10", s:"15:30", e:"17:45", t:"Afternoon in the city (not picked yet)", ico:"🏙️", cal:"fun", note:"The Botanic Garden is off. We are choosing between Little Island and the West Village, Grand Central and the Public Library, or the Staten Island Ferry."},
   {d:"2026-10-10", s:"17:45", e:"19:00", t:"Back to the Ace, rest", ico:"🛋️", cal:"fun", mode:["transit","car"], place:"ace", note:"Back to the hotel with the shopping bags, then a rest before dinner."},
   {d:"2026-10-10", s:"19:00", e:"20:30", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sat-dinner"},
 
@@ -584,7 +585,7 @@ var EVENTS = [
 var MEALS = [
   {key:"fri-lunch",     name:"Friday lunch",       where:"we ate at DeKalb Market Hall", more:"casual sit-down lunch restaurants", inf:"neighborhoods/fort-greene", ico:"🥪", order:["DeKalb Market Hall"]},
   {key:"fri-dinner",    name:"Friday dinner",      where:"Dad's birthday", more:"casual steak restaurants", inf:"cuisines/steaks", ico:"🎂", order:["Colonia Verde", "Evelina", "Walter's", "Sailor", "French Louie", "Fraunces Tavern"]},
-  {key:"sat-lunch",     name:"Saturday lunch",     where:"by the Roastery, or near the garden after the bag drop", more:"casual sit-down lunch restaurants", inf:"perfect-for/lunch", ico:"🥪", order:["Starbucks Reserve Roastery", "Chelsea Market", "Tom's Restaurant", "The Vaux"]},
+  {key:"sat-lunch",     name:"Saturday lunch",     where:"by the Roastery", more:"casual sit-down lunch restaurants", inf:"perfect-for/lunch", ico:"🥪", order:["Starbucks Reserve Roastery", "Chelsea Market"]},
   {key:"sat-dinner",    name:"Saturday dinner",    where:"Brooklyn", more:"casual steak and American restaurants", inf:"perfect-for/dinner-with-the-parents", ico:"🍽️", order:["Gage & Tollner", "French Louie", "Colonia Verde", "Eyval"]},
   {key:"sun-lunch",     name:"Sunday lunch",       where:"near the Frick", more:"casual sit-down lunch restaurants", inf:"neighborhoods/upper-east-side", ico:"🥪"},
   {key:"sun-dinner",    name:"Sunday dinner",      where:"after SoHo", more:"casual steak and American restaurants", inf:"perfect-for/dinner-with-the-parents", ico:"🍽️"},
@@ -649,9 +650,9 @@ var EATS = [
    d:"A sit-down café inside the Botanic Garden, looking out on Magnolia Plaza. A short menu of salads, grain bowls and sandwiches. It closes at 3:30, so it only works for an early lunch."},
   {n:"gertrude's", pid:"ChIJnRyRtUBbwokR4veV9Er_PAU", k:"Bistro brunch, Prospect Heights", area:"Brooklyn", cui:"American", meals:[], q:"gertrude's 605 Carlton Ave Brooklyn",
    d:"A neighborhood bistro a few blocks north of the park. Brunch until 3: a good burger, potato pancakes, French toast. About a 15 to 20 minute walk to the garden."},
-  {n:"The Vaux", pid:"ChIJ45c7LgBbwokR6GskZ46FOnU", k:"American bistro, Prospect Heights", area:"Brooklyn", cui:"American", meals:["sat-lunch"], q:"The Vaux 570 Vanderbilt Ave Brooklyn",
+  {n:"The Vaux", pid:"ChIJ45c7LgBbwokR6GskZ46FOnU", k:"American bistro, Prospect Heights", area:"Brooklyn", cui:"American", meals:[], q:"The Vaux 570 Vanderbilt Ave Brooklyn",
    d:"A cozy bar and restaurant on Vanderbilt Avenue. Burgers, steak and eggs, shrimp and grits. About a 15 to 20 minute walk to the garden."},
-  {n:"Tom's Restaurant", pid:"ChIJkQjM7KBbwokRwC8M-XGNpsk", k:"Classic diner, Prospect Heights", area:"Brooklyn", cui:"American", meals:["sat-lunch"], q:"Tom's Restaurant 782 Washington Ave Brooklyn",
+  {n:"Tom's Restaurant", pid:"ChIJkQjM7KBbwokRwC8M-XGNpsk", k:"Classic diner, Prospect Heights", area:"Brooklyn", cui:"American", meals:[], q:"Tom's Restaurant 782 Washington Ave Brooklyn",
    d:"A Brooklyn diner from 1936, a few blocks from the garden. Pancakes, omelets, egg creams. Fast and friendly, but there is often a line on weekends and the parade is close by."},
   {n:"Time Out Market", k:"Food hall, DUMBO", area:"Brooklyn", cui:"Food hall", meals:[], q:"Time Out Market New York 55 Water St Brooklyn", w:"https://www.timeoutmarket.com/newyork/",
    d:"A food hall on the Brooklyn waterfront. Lots of counters, so everyone gets what they want. Take it up to the roof for a view of both bridges."},
