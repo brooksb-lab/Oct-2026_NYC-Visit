@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Friday, October 9 at 8:58 pm";
+var UPDATED = "Updated Saturday, October 10 at 8:24 am";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -439,7 +439,8 @@ var CHANGES = [
   {at:"2026-10-09T18:03", text:"Friday lunch is done: we ate at DeKalb Market Hall. The lunch places we did not use are now under Other ideas at the bottom of the food list."},
   {at:"2026-10-09T18:07", text:"Friday dinner: four places on my street are now at the top of the list. Colonia Verde, Evelina, Walter's and Sailor."},
   {at:"2026-10-09T18:20", text:"The Tribeca restaurants are off the food list."},
-  {at:"2026-10-09T20:58", text:"Saturday is new. The High Line in the morning, the Vessel at 11, lunch at the café inside the Brooklyn Botanic Garden, then the garden. Governors Island is off for now."}
+  {at:"2026-10-09T20:58", text:"Saturday is new. The High Line in the morning, the Vessel at 11, lunch at the café inside the Brooklyn Botanic Garden, then the garden. Governors Island is off for now."},
+  {at:"2026-10-10T08:24", text:"Saturday starts at 9:30 now, so everything is about half an hour later. No sit-down breakfast: we grab something small at the hotel and save room for lunch at 1:10."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -447,9 +448,9 @@ var CHANGES = [
    in the weather card and the sunset line. party:true fires confetti on that day. Refresh when the forecast changes. */
 var DAYS = [
   {date:"2026-10-09", wd:"Friday",   short:"Fri", num:9,  hi:72, lo:56, pop:0,  rise:"07:02", set:"18:26", party:true, sky:"Clear", wx:"☀️", meta:"About 72° and clear. Dad's birthday."},
-  {date:"2026-10-10", wd:"Saturday", short:"Sat", num:10, hi:68, lo:55, pop:10, rise:"07:03", set:"18:23", sky:"Mostly sunny", wx:"🌤️", meta:"About 68° and dry."},
-  {date:"2026-10-11", wd:"Sunday",   short:"Sun", num:11, hi:62, lo:57, pop:85, rise:"07:04", set:"18:22", sky:"Rain", wx:"🌧️", meta:"About 62°, rain likely. Mostly indoors."},
-  {date:"2026-10-12", wd:"Monday",   short:"Mon", num:12, hi:71, lo:57, pop:70, rise:"07:05", set:"18:20", sky:"Rain", wx:"🌧️", meta:"About 71°, rain likely. Flight at 12:19 pm."}
+  {date:"2026-10-10", wd:"Saturday", short:"Sat", num:10, hi:68, lo:56, pop:10, rise:"07:03", set:"18:23", sky:"Mostly sunny", wx:"🌤️", meta:"About 68° and dry."},
+  {date:"2026-10-11", wd:"Sunday",   short:"Sun", num:11, hi:61, lo:56, pop:75, rise:"07:04", set:"18:22", sky:"Rain", wx:"🌧️", meta:"About 61°, rain likely. Mostly indoors."},
+  {date:"2026-10-12", wd:"Monday",   short:"Mon", num:12, hi:71, lo:56, pop:75, rise:"07:05", set:"18:20", sky:"Rain", wx:"🌧️", meta:"About 71°, rain likely. Flight at 12:19 pm."}
 ];
 
 /* lat, lon are approximate and only place the pin on the drawn map. lab = side the map label sits on.
@@ -531,15 +532,15 @@ var EVENTS = [
   {d:"2026-10-09", s:"19:15", e:"20:45", t:"Dinner (TBD)", ico:"🎂", cal:"meal", tbd:"fri-dinner"},
   {d:"2026-10-09", s:"20:45", e:"21:45", t:"Car with bags from mine to the Ace, check-in", ico:"🛎️", cal:"between", mode:["car"], place:"ace", path:["home","ace"]},
 
-  {d:"2026-10-10", s:"08:00", e:"09:00", t:"Breakfast (TBD)", ico:"🍳", cal:"meal", tbd:"sat-breakfast"},
-  {d:"2026-10-10", s:"09:00", e:"09:45", t:"A or C train to the High Line: Hoyt-Schermerhorn to 14 St", ico:"🚇", cal:"between", mode:["transit"], to:"hlsouth", path:["ace","hlsouth"], note:"The station is next to the hotel. From 14 St it is an 8 minute walk to the High Line stairs."},
-  {d:"2026-10-10", s:"09:45", e:"11:00", t:"High Line, Gansevoort St north to Hudson Yards", ico:"🌿", cal:"fun", place:"hlsouth", note:"About 1.5 miles. Free, no tickets. It ends beside the Vessel."},
-  {d:"2026-10-10", s:"11:00", e:"11:40", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
-   note:"It opens at 11. Free to see from the plaza. Climbing takes a timed ticket, and it is mostly stairs."},
-  {d:"2026-10-10", s:"11:40", e:"12:40", t:"7 and Q trains to the Botanic Garden", ico:"🚇", cal:"between", mode:["transit"], to:"bbg", note:"The 7 one stop to Times Square, then the Q to Prospect Park. We go in at the Flatbush Avenue entrance, away from the parade."},
-  {d:"2026-10-10", s:"12:40", e:"13:45", t:"Lunch: Yellow Magnolia Café", ico:"🥪", cal:"meal", place:"bbg", opts:"sat-lunch", note:"Inside the garden, looking out on Magnolia Plaza. We buy garden tickets at the gate on the way in."},
-  {d:"2026-10-10", s:"13:45", e:"16:15", t:"Brooklyn Botanic Garden (Japanese Hill-and-Pond Garden first)", ico:"🌿", cal:"fun", place:"bbg", tix:"https://www.bbg.org/tickets", note:"Tickets are sold at the gate. No set entry time."},
-  {d:"2026-10-10", s:"16:15", e:"19:00", t:"Back to the Ace, rest", ico:"🛋️", cal:"fun", mode:["transit","car"], place:"ace", note:"The Q three stops to DeKalb Av, then a short walk."},
+  {d:"2026-10-10", s:"09:15", e:"09:30", t:"Quick bite, grab and go", ico:"🥯", cal:"meal", place:"ace", note:"No sit-down breakfast today. Black Seed Bagels is in the hotel lobby. We save room for lunch."},
+  {d:"2026-10-10", s:"09:30", e:"10:15", t:"A or C train to the High Line: Hoyt-Schermerhorn to 14 St", ico:"🚇", cal:"between", mode:["transit"], to:"hlsouth", path:["ace","hlsouth"], note:"The station is next to the hotel. From 14 St it is an 8 minute walk to the High Line stairs."},
+  {d:"2026-10-10", s:"10:15", e:"11:30", t:"High Line, Gansevoort St north to Hudson Yards", ico:"🌿", cal:"fun", place:"hlsouth", note:"About 1.5 miles. Free, no tickets. It ends beside the Vessel."},
+  {d:"2026-10-10", s:"11:30", e:"12:10", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb",
+   note:"Free to see from the plaza. Climbing takes a timed ticket, and it is mostly stairs."},
+  {d:"2026-10-10", s:"12:10", e:"13:10", t:"7 and Q trains to the Botanic Garden", ico:"🚇", cal:"between", mode:["transit"], to:"bbg", note:"The 7 one stop to Times Square, then the Q to Prospect Park. We go in at the Flatbush Avenue entrance, away from the parade."},
+  {d:"2026-10-10", s:"13:10", e:"14:15", t:"Lunch: Yellow Magnolia Café", ico:"🥪", cal:"meal", place:"bbg", opts:"sat-lunch", note:"Inside the garden, looking out on Magnolia Plaza. We buy garden tickets at the gate on the way in."},
+  {d:"2026-10-10", s:"14:15", e:"16:30", t:"Brooklyn Botanic Garden (Japanese Hill-and-Pond Garden first)", ico:"🌿", cal:"fun", place:"bbg", tix:"https://www.bbg.org/tickets", note:"Tickets are sold at the gate. No set entry time."},
+  {d:"2026-10-10", s:"16:30", e:"19:00", t:"Back to the Ace, rest", ico:"🛋️", cal:"fun", mode:["transit","car"], place:"ace", note:"The Q three stops to DeKalb Av, then a short walk."},
   {d:"2026-10-10", s:"19:00", e:"20:30", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sat-dinner"},
 
   {d:"2026-10-11", s:"08:00", e:"08:30", t:"A/C from Hoyt-Schermerhorn to Meatpacking", ico:"🚇", cal:"between", mode:["transit"], dest:"roast", place:"hoyt"},
@@ -573,7 +574,6 @@ var EVENTS = [
 var MEALS = [
   {key:"fri-lunch",     name:"Friday lunch",       where:"we ate at DeKalb Market Hall", more:"casual sit-down lunch restaurants", inf:"neighborhoods/fort-greene", ico:"🥪", order:["DeKalb Market Hall"]},
   {key:"fri-dinner",    name:"Friday dinner",      where:"Dad's birthday", more:"casual steak restaurants", inf:"cuisines/steaks", ico:"🎂", order:["Colonia Verde", "Evelina", "Walter's", "Sailor", "French Louie", "Fraunces Tavern"]},
-  {key:"sat-breakfast", name:"Saturday breakfast", where:"near the hotel", more:"breakfast diner", inf:"perfect-for/breakfast", ico:"🍳", order:["Junior's", "Black Seed Bagels"]},
   {key:"sat-lunch",     name:"Saturday lunch",     where:"Yellow Magnolia Café is the plan, or pick another", more:"casual sit-down lunch restaurants", inf:"perfect-for/lunch", ico:"🥪", order:["Yellow Magnolia Café", "gertrude's", "The Vaux", "Tom's Restaurant"]},
   {key:"sat-dinner",    name:"Saturday dinner",    where:"Brooklyn", more:"casual steak and American restaurants", inf:"perfect-for/dinner-with-the-parents", ico:"🍽️", order:["Gage & Tollner", "French Louie", "Colonia Verde", "Eyval"]},
   {key:"sun-lunch",     name:"Sunday lunch",       where:"near the Frick", more:"casual sit-down lunch restaurants", inf:"neighborhoods/upper-east-side", ico:"🥪"},
@@ -607,9 +607,9 @@ var EATS = [
    d:"A pretty Italian spot a block from my place. Fresh pasta and salads, eggs at lunch, and a strip steak at dinner. Lunch runs until 3:30 and dinner starts at 5."},
   {n:"Walter's", k:"American, Fort Greene", area:"Brooklyn", cui:"American", meals:["fri-dinner"], q:"Walter's 166 DeKalb Ave Brooklyn", w:"http://waltersbrooklyn.com/", r:"https://waltersbrooklyn.com/",
    d:"A neighborhood favorite across from Fort Greene Park, a five minute walk from my place. Steak and fries, a good burger, salads. Easy and comfortable."},
-  {n:"Junior's", k:"Diner and cheesecake, Downtown Brooklyn", area:"Brooklyn", cui:"American", meals:["sat-breakfast", "mon-breakfast"], q:"Junior's Restaurant 386 Flatbush Ave Ext Brooklyn", lat:40.6902, lon:-73.9819, mlat:40.6912, mlon:-73.9836, lab:"t", w:"http://www.juniorscheesecake.com/",
+  {n:"Junior's", k:"Diner and cheesecake, Downtown Brooklyn", area:"Brooklyn", cui:"American", meals:["mon-breakfast"], q:"Junior's Restaurant 386 Flatbush Ave Ext Brooklyn", lat:40.6902, lon:-73.9819, mlat:40.6912, mlon:-73.9836, lab:"t", w:"http://www.juniorscheesecake.com/",
    d:"A Brooklyn diner since 1950, five minutes on foot from your hotel. Eggs, pancakes, big sandwiches, and the most famous cheesecake in New York. Casual and quick."},
-  {n:"Black Seed Bagels", k:"Bagels and egg sandwiches, in your hotel", area:"Brooklyn", cui:"Bakery and coffee", meals:["sat-breakfast", "mon-breakfast"], q:"Black Seed Bagels 252 Schermerhorn St Brooklyn", lat:40.6876, lon:-73.9838, mlat:40.6866, mlon:-73.9806, lab:"r", s:"Black Seed", w:"https://www.blackseedbagels.com/",
+  {n:"Black Seed Bagels", k:"Bagels and egg sandwiches, in your hotel", area:"Brooklyn", cui:"Bakery and coffee", meals:["mon-breakfast"], q:"Black Seed Bagels 252 Schermerhorn St Brooklyn", lat:40.6876, lon:-73.9838, mlat:40.6866, mlon:-73.9806, lab:"r", s:"Black Seed", w:"https://www.blackseedbagels.com/",
    d:"A bagel shop on the ground floor of your hotel, right beside the front door. Fresh bagels, bacon, egg and cheese sandwiches, coffee. You order at the counter. Only a few seats, so it is the fastest choice."},
   {n:"The Little Sweet Café", k:"Crêpes and coffee, Boerum Hill", area:"Brooklyn", cui:"Bakery and coffee", meals:["mon-breakfast"], q:"The Little Sweet Café 77 Hoyt St Brooklyn", lat:40.6876, lon:-73.9861, mlat:40.6878, mlon:-73.9874, lab:"l", s:"Little Sweet Café",
    d:"A tiny, pretty café four minutes on foot from your hotel. Sweet and savory crêpes, egg dishes, and flavored lattes. Very small, so we may have to wait for a table."},
