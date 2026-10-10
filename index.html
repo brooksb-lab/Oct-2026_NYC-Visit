@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Saturday, October 10 at 4:00 pm";
+var UPDATED = "Updated Saturday, October 10 at 4:20 pm";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -449,7 +449,8 @@ var CHANGES = [
   {at:"2026-10-10T11:24", text:"We leave the hotel about 11:35, so today runs half an hour later: Skechers at 12:05, the Vessel at 1:05, the High Line at 1:25 and lunch by the Roastery at 2:30."},
   {at:"2026-10-10T12:52", text:"We are at Hudson Yards. We go up the Vessel at 1:00, then the High Line at 1:25 and lunch by the Roastery at 2:30."},
   {at:"2026-10-10T13:42", text:"We are on the High Line now. Coffee and lunch by the Roastery at about 2:45, then the afternoon in the city from 3:45."},
-  {at:"2026-10-10T16:00", text:"Late lunch at Estelle's in the Meatpacking District. After that, something easy on the feet, then the hotel at about 6:30. Dinner moves to 8:00."}
+  {at:"2026-10-10T16:00", text:"Late lunch at Estelle's in the Meatpacking District. After that, something easy on the feet, then the hotel at about 6:30. Dinner moves to 8:00."},
+  {at:"2026-10-10T16:20", text:"After lunch we sit at the Starbucks Roastery for a while, then something with little walking around sunset. Back to the hotel at about 7:00, dinner still at 8:00."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -553,11 +554,11 @@ var EVENTS = [
   {d:"2026-10-10", s:"12:36", e:"13:00", t:"Hudson Yards, wait for the Vessel", ico:"⏳", cal:"fun", place:"vessel", note:"On the plaza until our 1:00 entry."},
   {d:"2026-10-10", s:"13:00", e:"13:40", t:"Vessel", ico:"🏗️", cal:"fun", place:"vessel", tix:"https://buytickets.vesselnyc.com/", tixLabel:"Tickets to climb", bought:true,
    note:"Our entry time is 1:00. It is mostly stairs. The High Line starts right next to it."},
-  {d:"2026-10-10", s:"13:40", e:"14:45", t:"High Line, Hudson Yards south to 14th St", ico:"🌿", cal:"fun", place:"highline", note:"About 1.3 miles. Free, no tickets. We come off at 14th St, a block from the Roastery."},
-  {d:"2026-10-10", s:"14:45", e:"15:50", t:"Starbucks Reserve Roastery and Apple Store", ico:"☕", cal:"meal", place:"roast", note:"Off the High Line at 14th St. The Apple Store is around the corner."},
+  {d:"2026-10-10", s:"13:40", e:"15:50", t:"High Line, Hudson Yards south to 14th St", ico:"🌿", cal:"fun", place:"highline", note:"About 1.3 miles. Free, no tickets. We came off in the Meatpacking District."},
   {d:"2026-10-10", s:"15:55", e:"17:00", t:"Late lunch: Estelle's", ico:"🍔", cal:"meal", place:"estelles", note:"Comfort food on 9th Ave at 13th St. Burgers, steak frites and salads."},
-  {d:"2026-10-10", s:"17:00", e:"18:30", t:"After lunch, easy on the feet (not picked yet)", ico:"🌇", cal:"fun", note:"Something that is mostly sitting down. We are choosing between the rooftop park at Pier 57 for the sunset, the Staten Island Ferry, or going back to the hotel early."},
-  {d:"2026-10-10", s:"18:30", e:"20:00", t:"Back to the Ace, rest", ico:"🛋️", cal:"fun", mode:["transit","car"], place:"ace", note:"Back to the hotel with the shopping bags, then a rest before dinner."},
+  {d:"2026-10-10", s:"17:00", e:"17:45", t:"Starbucks Reserve Roastery", ico:"☕", cal:"meal", place:"roast", note:"A sit-down coffee after lunch. Three minutes up 9th Ave from Estelle's."},
+  {d:"2026-10-10", s:"17:45", e:"19:00", t:"After the Roastery, low walking (not picked yet)", ico:"🌇", cal:"fun", note:"Something that is mostly sitting down, around sunset at 6:23. We are choosing between the rooftop park at Pier 57, the waterfront under the Brooklyn Bridge, or the Staten Island Ferry."},
+  {d:"2026-10-10", s:"19:00", e:"20:00", t:"Back to the Ace, rest", ico:"🛋️", cal:"fun", mode:["transit","car"], place:"ace", note:"Back to the hotel with the shopping bags, then a rest before dinner."},
   {d:"2026-10-10", s:"20:00", e:"21:30", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sat-dinner"},
 
   {d:"2026-10-11", s:"08:00", e:"08:30", t:"A/C from Hoyt-Schermerhorn to Meatpacking", ico:"🚇", cal:"between", mode:["transit"], dest:"roast", place:"hoyt"},
