@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Saturday, October 10 at 9:20 pm";
+var UPDATED = "Updated Sunday, October 11 at 10:05 am";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -454,7 +454,8 @@ var CHANGES = [
   {at:"2026-10-10T20:07", text:"After the Roastery we stopped at Grandma Did It Better, took the C train to my place, then got Starbucks by the hotel. Now we are in the Ace lobby."},
   {at:"2026-10-10T20:33", text:"Friday dinner was at Saraghina Caffè, and we walked the bags to the hotel. Sunday is being replanned as a rainy museum day. The Roastery, Little Island and SoHo are off it because we already did them."},
   {at:"2026-10-10T20:50", text:"Sunday is set: breakfast by the hotel at 9:00, the Frick at 10:30, lunch nearby, then the Morgan Library at 2:15. Mostly cars, so very little walking in the rain."},
-  {at:"2026-10-10T21:20", text:"Change of plan for Sunday: it is a rainy day at the Met. Breakfast at 8:30, car at 9:20, in the door when it opens at 10:00, lunch in the middle, and back at the hotel by about 4:20. The Frick and the Morgan are off."}
+  {at:"2026-10-10T21:20", text:"Change of plan for Sunday: it is a rainy day at the Met. Breakfast at 8:30, car at 9:20, in the door when it opens at 10:00, lunch in the middle, and back at the hotel by about 4:20. The Frick and the Morgan are off."},
+  {at:"2026-10-11T10:05", text:"We left the hotel at 10:03, so today runs about half an hour later: the Met at 10:45, lunch at 1:00, and back at the hotel by about 4:50."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -574,11 +575,11 @@ var EVENTS = [
   {d:"2026-10-10", s:"21:00", e:"22:15", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sat-dinner"},
 
   {d:"2026-10-11", s:"08:30", e:"09:15", t:"Coffee and breakfast by the Ace", ico:"☕", cal:"meal", place:"blackseed", path:["ace"], note:"Black Seed Bagels in the hotel lobby, or the Starbucks on Fulton St."},
-  {d:"2026-10-11", s:"09:20", e:"10:00", t:"Car to the Met", ico:"🚕", cal:"between", mode:["car"], to:"met", note:"About 40 minutes. We go in at 81st St, at street level, right when it opens at 10:00."},
-  {d:"2026-10-11", s:"10:00", e:"12:30", t:"The Met, morning: first floor", ico:"🏛️", cal:"fun", place:"met", tix:"https://www.metmuseum.org/plan-your-visit", tixLabel:"Tickets", note:"One easy loop: the Egyptian wing and the Temple of Dendur, the American Wing with its glass courtyard and Frank Lloyd Wright room, then Arms and Armor."},
-  {d:"2026-10-11", s:"12:30", e:"13:30", t:"Lunch (TBD)", ico:"🥪", cal:"meal", tbd:"sun-lunch"},
-  {d:"2026-10-11", s:"13:30", e:"15:30", t:"The Met, afternoon: second floor", ico:"🖼️", cal:"fun", place:"met", tix:"https://www.metmuseum.org/plan-your-visit", tixLabel:"Tickets", note:"The European paintings, rehung since your last visit, the Impressionists next door, and the Chinese garden court. Benches everywhere, and we stop when feet say so."},
-  {d:"2026-10-11", s:"15:35", e:"16:20", t:"Car back to the Ace", ico:"🚕", cal:"between", mode:["car","transit"], to:"ace", note:"A rest at the hotel before dinner."},
+  {d:"2026-10-11", s:"10:03", e:"10:45", t:"Car to the Met", ico:"🚕", cal:"between", mode:["car"], to:"met", note:"About 40 minutes. We go in at 81st St, at street level."},
+  {d:"2026-10-11", s:"10:45", e:"13:00", t:"The Met, morning: first floor", ico:"🏛️", cal:"fun", place:"met", tix:"https://www.metmuseum.org/plan-your-visit", tixLabel:"Tickets", note:"One easy loop: the Egyptian wing and the Temple of Dendur, the American Wing with its glass courtyard and Frank Lloyd Wright room, then Arms and Armor."},
+  {d:"2026-10-11", s:"13:00", e:"14:00", t:"Lunch (TBD)", ico:"🥪", cal:"meal", tbd:"sun-lunch"},
+  {d:"2026-10-11", s:"14:00", e:"16:00", t:"The Met, afternoon: second floor", ico:"🖼️", cal:"fun", place:"met", tix:"https://www.metmuseum.org/plan-your-visit", tixLabel:"Tickets", note:"The European paintings, rehung since your last visit, the Impressionists next door, and the Chinese garden court. Benches everywhere, and we stop when feet say so."},
+  {d:"2026-10-11", s:"16:05", e:"16:50", t:"Car back to the Ace", ico:"🚕", cal:"between", mode:["car","transit"], to:"ace", note:"A rest at the hotel before dinner."},
   {d:"2026-10-11", s:"18:30", e:"20:00", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sun-dinner"},
 
   {d:"2026-10-12", s:"09:00", e:"09:15", t:"Check out, bags at the desk", ico:"🧳", cal:"between", place:"ace"},
