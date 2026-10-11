@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Saturday, October 10 at 4:20 pm";
+var UPDATED = "Updated Saturday, October 10 at 8:07 pm";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -450,7 +450,8 @@ var CHANGES = [
   {at:"2026-10-10T12:52", text:"We are at Hudson Yards. We go up the Vessel at 1:00, then the High Line at 1:25 and lunch by the Roastery at 2:30."},
   {at:"2026-10-10T13:42", text:"We are on the High Line now. Coffee and lunch by the Roastery at about 2:45, then the afternoon in the city from 3:45."},
   {at:"2026-10-10T16:00", text:"Late lunch at Estelle's in the Meatpacking District. After that, something easy on the feet, then the hotel at about 6:30. Dinner moves to 8:00."},
-  {at:"2026-10-10T16:20", text:"After lunch we sit at the Starbucks Roastery for a while, then something with little walking around sunset. Back to the hotel at about 7:00, dinner still at 8:00."}
+  {at:"2026-10-10T16:20", text:"After lunch we sit at the Starbucks Roastery for a while, then something with little walking around sunset. Back to the hotel at about 7:00, dinner still at 8:00."},
+  {at:"2026-10-10T20:07", text:"After the Roastery we stopped at Grandma Did It Better, took the C train to my place, then got Starbucks by the hotel. Now we are in the Ace lobby."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -493,6 +494,7 @@ var PLACES = {
   bbg:     {name:"Brooklyn Botanic Garden", addr:"455 Flatbush Ave, Brooklyn, NY 11225", pid:"ChIJwYu_aA5bwokR2lxjW-QvQlc", q:"Brooklyn Botanic Garden", dq:"455 Flatbush Ave, Brooklyn, NY 11225", lat:40.6694, lon:-73.9624, lab:"l", s:"Botanic Garden"},
   hoyt:    {name:"Hoyt-Schermerhorn Sts station", addr:"Schermerhorn St, Brooklyn, NY 11201", pid:"ChIJIwtUHE1awokRTAqZATg9BEs", q:"Hoyt-Schermerhorn Sts subway station, Brooklyn", lat:40.6886, lon:-73.9851, lab:"r", s:"Hoyt-Schermerhorn"},
   estelles:{name:"Estelle's", addr:"18 9th Ave, New York, NY 10014", pid:"ChIJq2J-ccNZwokRI9ntSgj1tk0", lat:40.7401, lon:-74.0057, mlat:40.7377, mlon:-74.0040, lab:"r", s:"Estelle's"},
+  grandma: {name:"Grandma Did It Better", addr:"66 9th Ave, New York, NY 10011", pid:"ChIJR98zCPFZwokRfNrFVFjaN90", lat:40.7414, lon:-74.0047, way:true},
   roast:   {name:"Starbucks Reserve Roastery", addr:"61 9th Ave, New York, NY 10011", pid:"ChIJIQDZbb9ZwokRNRez4RviXGQ", lat:40.7416, lon:-74.0051, lab:"r", s:"Roastery"},
   chelsea: {name:"Chelsea Market", addr:"75 9th Ave, New York, NY 10011", pid:"ChIJw2lMFL9ZwokRosAtly52YX4", lat:40.7424, lon:-74.0061, mlat:40.7475, mlon:-74.0010, lab:"r", s:"Chelsea Market"},
   little:  {name:"Little Island", addr:"Pier 55 at W 13th St, New York, NY 10014", pid:"ChIJL-CJmTFZwokRsPcqje_bn7w", q:"Little Island, New York", lat:40.7420, lon:-74.0118, lab:"l", s:"Little Island"},
@@ -556,10 +558,14 @@ var EVENTS = [
    note:"Our entry time is 1:00. It is mostly stairs. The High Line starts right next to it."},
   {d:"2026-10-10", s:"13:40", e:"15:50", t:"High Line, Hudson Yards south to 14th St", ico:"🌿", cal:"fun", place:"highline", note:"About 1.3 miles. Free, no tickets. We came off in the Meatpacking District."},
   {d:"2026-10-10", s:"15:55", e:"17:00", t:"Late lunch: Estelle's", ico:"🍔", cal:"meal", place:"estelles", note:"Comfort food on 9th Ave at 13th St. Burgers, steak frites and salads."},
-  {d:"2026-10-10", s:"17:00", e:"17:45", t:"Starbucks Reserve Roastery", ico:"☕", cal:"meal", place:"roast", note:"A sit-down coffee after lunch. Three minutes up 9th Ave from Estelle's."},
-  {d:"2026-10-10", s:"17:45", e:"19:00", t:"After the Roastery, low walking (not picked yet)", ico:"🌇", cal:"fun", note:"Something that is mostly sitting down, around sunset at 6:23. We are choosing between the rooftop park at Pier 57, the waterfront under the Brooklyn Bridge, or the Staten Island Ferry."},
-  {d:"2026-10-10", s:"19:00", e:"20:00", t:"Back to the Ace, rest", ico:"🛋️", cal:"fun", mode:["transit","car"], place:"ace", note:"Back to the hotel with the shopping bags, then a rest before dinner."},
-  {d:"2026-10-10", s:"20:00", e:"21:30", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sat-dinner"},
+  {d:"2026-10-10", s:"17:00", e:"17:40", t:"Starbucks Reserve Roastery", ico:"☕", cal:"meal", place:"roast", note:"A sit-down coffee after lunch. Three minutes up 9th Ave from Estelle's."},
+  {d:"2026-10-10", s:"17:40", e:"18:10", t:"Grandma Did It Better", ico:"👗", cal:"fun", place:"grandma", note:"A vintage clothing shop across 9th Ave from the Roastery."},
+  {d:"2026-10-10", s:"18:10", e:"18:45", t:"C train back to Fort Greene", ico:"🚇", cal:"between", mode:["transit"], to:"home", note:"From 14th St to Lafayette Av, then a short walk to my place."},
+  {d:"2026-10-10", s:"18:45", e:"19:10", t:"My place: Navage setup", ico:"🏠", cal:"between", place:"home"},
+  {d:"2026-10-10", s:"19:10", e:"19:30", t:"My place to the Starbucks by the Ace", ico:"🚶", cal:"between", to:"sbux"},
+  {d:"2026-10-10", s:"19:30", e:"19:50", t:"Coffee: Starbucks by the Ace", ico:"☕", cal:"meal", place:"sbux", note:"The Starbucks at Fulton St and Bond St."},
+  {d:"2026-10-10", s:"19:50", e:"21:00", t:"Ace lobby, work area", ico:"💻", cal:"fun", place:"ace", note:"Sitting in the hotel lobby with the laptops."},
+  {d:"2026-10-10", s:"21:00", e:"22:15", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sat-dinner"},
 
   {d:"2026-10-11", s:"08:00", e:"08:30", t:"A/C from Hoyt-Schermerhorn to Meatpacking", ico:"🚇", cal:"between", mode:["transit"], dest:"roast", place:"hoyt"},
   {d:"2026-10-11", s:"08:30", e:"09:15", t:"Starbucks Reserve Roastery", ico:"☕", cal:"meal", place:"roast", tix:"https://www.opentable.com/restaurant/profile/1346173", tixLabel:"Reserve a table"},
