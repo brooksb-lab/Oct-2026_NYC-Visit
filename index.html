@@ -421,7 +421,7 @@ details.go[open] ~ .subhint{display:none}
 <script>
 "use strict";
 /* ============ DATA: edit here, then republish. Mirrors the Meal, Fun and Between calendars. ============ */
-var UPDATED = "Updated Sunday, October 11 at 10:05 am";
+var UPDATED = "Updated Sunday, October 11 at 10:57 am";
 
 /* CHANGES: what moved, newest last. Add a line whenever the plan changes; people who have opened the page before
    see the new lines in a yellow "Plan change" strip until they tap "Got it". at = New York time. */
@@ -455,7 +455,8 @@ var CHANGES = [
   {at:"2026-10-10T20:33", text:"Friday dinner was at Saraghina Caffè, and we walked the bags to the hotel. Sunday is being replanned as a rainy museum day. The Roastery, Little Island and SoHo are off it because we already did them."},
   {at:"2026-10-10T20:50", text:"Sunday is set: breakfast by the hotel at 9:00, the Frick at 10:30, lunch nearby, then the Morgan Library at 2:15. Mostly cars, so very little walking in the rain."},
   {at:"2026-10-10T21:20", text:"Change of plan for Sunday: it is a rainy day at the Met. Breakfast at 8:30, car at 9:20, in the door when it opens at 10:00, lunch in the middle, and back at the hotel by about 4:20. The Frick and the Morgan are off."},
-  {at:"2026-10-11T10:05", text:"We left the hotel at 10:03, so today runs about half an hour later: the Met at 10:45, lunch at 1:00, and back at the hotel by about 4:50."}
+  {at:"2026-10-11T10:05", text:"We left the hotel at 10:03, so today runs about half an hour later: the Met at 10:45, lunch at 1:00, and back at the hotel by about 4:50."},
+  {at:"2026-10-11T10:57", text:"The Met was too crowded, so we are at the Guggenheim instead. Lunch nearby at about 12:30, then one more indoor stop or an early ride back."}
 ];
 
 /* Forecast per day, shown in the weather card and day headers: hi and lo in °F, pop = chance of rain in percent,
@@ -503,6 +504,7 @@ var PLACES = {
   roast:   {name:"Starbucks Reserve Roastery", addr:"61 9th Ave, New York, NY 10011", pid:"ChIJIQDZbb9ZwokRNRez4RviXGQ", lat:40.7416, lon:-74.0051, lab:"r", s:"Roastery"},
   chelsea: {name:"Chelsea Market", addr:"75 9th Ave, New York, NY 10011", pid:"ChIJw2lMFL9ZwokRosAtly52YX4", lat:40.7424, lon:-74.0061, mlat:40.7475, mlon:-74.0010, lab:"r", s:"Chelsea Market"},
   little:  {name:"Little Island", addr:"Pier 55 at W 13th St, New York, NY 10014", pid:"ChIJL-CJmTFZwokRsPcqje_bn7w", q:"Little Island, New York", lat:40.7420, lon:-74.0118, lab:"l", s:"Little Island"},
+  gugg:    {name:"Solomon R. Guggenheim Museum", addr:"1071 5th Ave, New York, NY 10128", pid:"ChIJmZ5emqJYwokRuDz79o0coAQ", lat:40.7830, lon:-73.9590, mlat:40.7745, mlon:-73.9650, lab:"l", s:"Guggenheim"},
   met:     {name:"The Metropolitan Museum of Art", addr:"1000 5th Ave, New York, NY 10028", pid:"ChIJb8Jg9pZYwokR-qHGtvSkLzs", lat:40.7794, lon:-73.9632, mlat:40.7745, mlon:-73.9650, lab:"l", s:"The Met"},
   morgan:  {name:"The Morgan Library & Museum", addr:"225 Madison Ave, New York, NY 10016", pid:"ChIJ3453OAdZwokRja92OOKCugM", lat:40.7492, lon:-73.9814, lab:"l", s:"The Morgan"},
   frick:   {name:"The Frick Collection", addr:"1 E 70th St, New York, NY 10021", pid:"ChIJHRH97uxYwokR6CBeDyn1jtg", lat:40.7712, lon:-73.9673, lab:"l", s:"The Frick"},
@@ -575,11 +577,11 @@ var EVENTS = [
   {d:"2026-10-10", s:"21:00", e:"22:15", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sat-dinner"},
 
   {d:"2026-10-11", s:"08:30", e:"09:15", t:"Coffee and breakfast by the Ace", ico:"☕", cal:"meal", place:"blackseed", path:["ace"], note:"Black Seed Bagels in the hotel lobby, or the Starbucks on Fulton St."},
-  {d:"2026-10-11", s:"10:03", e:"10:45", t:"Car to the Met", ico:"🚕", cal:"between", mode:["car"], to:"met", note:"About 40 minutes. We go in at 81st St, at street level."},
-  {d:"2026-10-11", s:"10:45", e:"13:00", t:"The Met, morning: first floor", ico:"🏛️", cal:"fun", place:"met", tix:"https://www.metmuseum.org/plan-your-visit", tixLabel:"Tickets", note:"One easy loop: the Egyptian wing and the Temple of Dendur, the American Wing with its glass courtyard and Frank Lloyd Wright room, then Arms and Armor."},
-  {d:"2026-10-11", s:"13:00", e:"14:00", t:"Lunch (TBD)", ico:"🥪", cal:"meal", tbd:"sun-lunch"},
-  {d:"2026-10-11", s:"14:00", e:"16:00", t:"The Met, afternoon: second floor", ico:"🖼️", cal:"fun", place:"met", tix:"https://www.metmuseum.org/plan-your-visit", tixLabel:"Tickets", note:"The European paintings, rehung since your last visit, the Impressionists next door, and the Chinese garden court. Benches everywhere, and we stop when feet say so."},
-  {d:"2026-10-11", s:"16:05", e:"16:50", t:"Car back to the Ace", ico:"🚕", cal:"between", mode:["car","transit"], to:"ace", note:"A rest at the hotel before dinner."},
+  {d:"2026-10-11", s:"10:03", e:"10:50", t:"Car to the Met, then on to the Guggenheim", ico:"🚕", cal:"between", mode:["car"], to:"gugg", note:"The Met was packed, so we went eight blocks up Fifth Avenue instead."},
+  {d:"2026-10-11", s:"10:53", e:"12:30", t:"Guggenheim Museum", ico:"🌀", cal:"fun", place:"gugg", note:"Frank Lloyd Wright's spiral. We ride the elevator to the top and walk the ramp down. The side rooms have the Van Goghs and Cézannes."},
+  {d:"2026-10-11", s:"12:30", e:"13:30", t:"Lunch (TBD)", ico:"🥪", cal:"meal", tbd:"sun-lunch"},
+  {d:"2026-10-11", s:"13:30", e:"15:30", t:"After lunch (not picked yet)", ico:"🏛️", cal:"fun", note:"One more indoor stop nearby, or an early ride back. We are choosing between the Cooper Hewitt design museum, the Neue Galerie and the Frick."},
+  {d:"2026-10-11", s:"15:35", e:"16:20", t:"Car back to the Ace", ico:"🚕", cal:"between", mode:["car","transit"], to:"ace", note:"A rest at the hotel before dinner."},
   {d:"2026-10-11", s:"18:30", e:"20:00", t:"Dinner (TBD)", ico:"🍽️", cal:"meal", tbd:"sun-dinner"},
 
   {d:"2026-10-12", s:"09:00", e:"09:15", t:"Check out, bags at the desk", ico:"🧳", cal:"between", place:"ace"},
@@ -597,8 +599,8 @@ var MEALS = [
   {key:"fri-dinner",    name:"Friday dinner",      where:"we ate at Saraghina Caffè", more:"casual steak restaurants", inf:"cuisines/steaks", ico:"🎂", order:["Saraghina Caffè"]},
   {key:"sat-lunch",     name:"Saturday lunch",     where:"we ate at Estelle's", more:"casual sit-down lunch restaurants", inf:"perfect-for/lunch", ico:"🥪", order:["Estelle's"]},
   {key:"sat-dinner",    name:"Saturday dinner",    where:"Brooklyn", more:"casual steak and American restaurants", inf:"perfect-for/dinner-with-the-parents", ico:"🍽️", order:["Gage & Tollner", "French Louie", "Colonia Verde", "Eyval"]},
-  {key:"sun-lunch",     name:"Sunday lunch",       where:"at the Met", more:"casual sit-down lunch restaurants", inf:"neighborhoods/upper-east-side", ico:"🥪", order:["The American Wing Café", "Nectar", "EJ's Luncheonette"]},
-  {key:"sun-dinner",    name:"Sunday dinner",      where:"after the Met", more:"casual steak and American restaurants", inf:"perfect-for/dinner-with-the-parents", ico:"🍽️", order:["Gage & Tollner", "French Louie", "Keens Steakhouse"]},
+  {key:"sun-lunch",     name:"Sunday lunch",       where:"near the Guggenheim", more:"casual sit-down lunch restaurants", inf:"neighborhoods/upper-east-side", ico:"🥪", order:["Bocado", "Pascalou", "Nectar"]},
+  {key:"sun-dinner",    name:"Sunday dinner",      where:"our last night", more:"casual steak and American restaurants", inf:"perfect-for/dinner-with-the-parents", ico:"🍽️", order:["Gage & Tollner", "French Louie", "Keens Steakhouse"]},
   {key:"mon-breakfast", name:"Monday breakfast",   where:"near the hotel, before the car", more:"breakfast diner", inf:"perfect-for/breakfast", ico:"🍳", order:["Junior's", "Black Seed Bagels", "The Little Sweet Café", "L'Appartement 4F"]}
 ];
 /* Group order for the Location and Cuisine views. MORE_Q = "More options" search text for a cuisine group
@@ -646,18 +648,22 @@ var EATS = [
    d:"A fun, colorful diner that serves Thai food next to American comfort food. Some dishes are spicy, but plenty are mild: fried chicken, noodles, an egg sandwich. It is popular, so there can be a short wait."},
   {n:"Jiang Nan", k:"Chinese, Bowery", area:"Downtown Manhattan", cui:"Asian", meals:[], q:"Jiang Nan 103 Bowery", w:"https://jiangnanny.com/",
    d:"A handsome, comfortable Chinese restaurant. The Peking duck is the thing to order, and the menu is big, so you pick a few dishes to share. Nothing has to be spicy."},
-  {n:"The American Wing Café", k:"Café inside the Met", area:"Uptown", cui:"American", meals:["sun-lunch"], q:"The American Wing Cafe Metropolitan Museum of Art New York",
+  {n:"Bocado", pid:"ChIJBadnurxYwokRFkgZg97zTNA", k:"American bistro, Upper East Side", area:"Uptown", cui:"American", meals:["sun-lunch"], q:"Bocado 1293 Lexington Ave New York",
+   d:"A relaxed neighborhood bistro with something for everyone: steak frites, burgers, big salads and a brunch menu. Plenty of seats and generous portions. Eight minutes on foot from the Guggenheim."},
+  {n:"Pascalou", pid:"ChIJaZdHxaNYwokRC5nuEnKTBeM", k:"French bistro, Carnegie Hill", area:"Uptown", cui:"French", meals:["sun-lunch"], q:"Pascalou 1308 Madison Ave New York",
+   d:"A small, warm French bistro on Madison Ave, six minutes on foot from the Guggenheim. French onion soup, omelettes, fish and a famous soufflé. It is tiny, so there can be a short wait."},
+  {n:"The American Wing Café", k:"Café inside the Met", area:"Uptown", cui:"American", meals:[], q:"The American Wing Cafe Metropolitan Museum of Art New York",
    d:"Inside the museum, in the big glass courtyard of the American Wing, so we never go out in the rain. Sandwiches, salads, baked goods and coffee. Open 11:00 to 4:00."},
   {n:"Nectar", pid:"ChIJYSsuP5ZYwokRSjn-MBTQnV0", k:"Diner, Madison Ave by the Met", area:"Uptown", cui:"American", meals:["sun-lunch"], q:"Nectar 1090 Madison Ave New York",
-   d:"A neighborhood coffee shop diner a four minute walk from the Met. Big sandwiches, burgers, omelettes and salads, and the food comes fast. Our Met tickets are good all day, so we can step out and come back."},
+   d:"A neighborhood coffee shop diner on Madison Ave, about ten minutes on foot from the Guggenheim. Big sandwiches, burgers, omelettes and salads, and the food comes fast."},
   {n:"Le Charlot", pid:"ChIJ5dtxYexYwokRYcr75mU0R2g", k:"French bistro, Upper East Side", area:"Uptown", cui:"French", meals:[], q:"Le Charlot 19 E 69th St New York",
    d:"A classic French bistro one block from the Frick. Salads, omelettes, fish and bistro plates, and quiet enough to talk. The shortest walk in the rain."},
   {n:"Westmoreland", pid:"ChIJL1JmMQBZwokRB1wjEnxWd4E", k:"Café inside the Frick", area:"Uptown", cui:"American", meals:[], q:"Westmoreland Frick Collection 1 E 70th St New York",
    d:"The restaurant upstairs in the Frick, so we never go outside. Salads, a club sandwich and soup in a pretty room. It needs a reservation, which we can ask for at the ticket desk. Small portions for the price."},
-  {n:"EJ's Luncheonette", pid:"ChIJm8GloepYwokRKQQXHlt9X9w", k:"Classic diner, Upper East Side", area:"Uptown", cui:"American", meals:["sun-lunch"], q:"EJ's Luncheonette 1271 3rd Ave New York",
+  {n:"EJ's Luncheonette", pid:"ChIJm8GloepYwokRKQQXHlt9X9w", k:"Classic diner, Upper East Side", area:"Uptown", cui:"American", meals:[], q:"EJ's Luncheonette 1271 3rd Ave New York",
    d:"An old-style New York diner with booths: turkey clubs, matzo ball soup, meatloaf, pancakes all day. A short car ride from the Met. Busy at Sunday brunch."},
   {n:"Keens Steakhouse", pid:"ChIJ5804KalZwokRzGll2Rm7nag", k:"Steakhouse since 1885, Midtown", area:"Midtown", cui:"Steak", meals:["sun-dinner"], q:"Keens Steakhouse 72 W 36th St New York", w:"https://www.keens.com/",
-   d:"One of the oldest steakhouses in New York, with thousands of clay pipes on the ceiling. Prime steaks and the famous mutton chop. About 15 minutes by car from the Met, and it opens at 5:00 on Sunday, so it would be an early dinner straight from the museum."},
+   d:"One of the oldest steakhouses in New York, with thousands of clay pipes on the ceiling. Prime steaks and the famous mutton chop. About 20 minutes by car from the Upper East Side, and it opens at 5:00 on Sunday, so it would be an early dinner."},
   {n:"Dear Margo", k:"Mediterranean, Upper East Side", area:"Uptown", cui:"Mediterranean and Persian", meals:[], w:"https://dearmargo.com/",
    d:"Fresh, bright Mediterranean food made for sharing: warm bread with hummus, grilled fish, chicken, salads. Healthy and easy to like. A five minute walk from the Frick."},
   {n:"Central Park Boathouse", k:"American, in Central Park", area:"Uptown", cui:"American", meals:[], w:"https://centralparkboathouse.com/", r:"https://www.opentable.com/r/central-park-boathouse-new-york-2",
